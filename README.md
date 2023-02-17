@@ -8,3 +8,4 @@
 6. Hanna-Alisa Basaraba
 7. Valery Mihailuk
 8. nikita melnikov
+9. Pavel Petrik
