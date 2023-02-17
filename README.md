@@ -12,3 +12,4 @@
 10. Anastasia Holodok
 11. Sveta Kostyko
 12. Nataliya Baravuliya
+13. Piotr Ropot
