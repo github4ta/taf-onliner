@@ -10,3 +10,4 @@
 8. nikita melnikov
 9. Pavel Petrik
 10. Anastasia Holodok
+11. Sveta Kostyko
