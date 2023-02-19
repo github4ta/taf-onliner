@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class OnlinerTest1 {
+public class OnlinerTest {
 
     WebDriver driver;
 
@@ -14,7 +14,7 @@ public class OnlinerTest1 {
     public void warmUp() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get(OnlinerPage.URL_ONLINER);
+        driver.get(OnlinerPage.URL);
     }
 
     @Test
