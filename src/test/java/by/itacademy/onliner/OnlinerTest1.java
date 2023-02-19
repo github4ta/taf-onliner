@@ -8,15 +8,16 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class OnlinerTest1 {
     WebDriver driver;
+
     @BeforeEach
-    public void warmUp( ) {
+    public void warmUp() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get(OnlinerPage.URL_ONLINER);
     }
 
     @Test
-    public void testOpenOnliner(){
+    public void testOpenOnliner() {
 
     }
 
