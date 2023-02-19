@@ -1,25 +1,29 @@
 package by.itacademy.onliner;
 
-import jdk.jshell.execution.Util;
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Test;
-import org.openqa.selenium.By;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class OnlinerTest1 {
+
     WebDriver driver;
-    @Test
-    public void testOpenOnliner() {
+
+    @BeforeEach
+    public void warmUp() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get(OnlinerPage1.URL);
-        driver.quit();
+        driver.get(OnlinerPage.URL_ONLINER);
     }
-    @After
-    public void endTest() {
+
+    @Test
+    public void testOpenOnliner() {
+
+    }
+
+    @AfterEach
+    public void tearDown() {
         driver.quit();
     }
 }
