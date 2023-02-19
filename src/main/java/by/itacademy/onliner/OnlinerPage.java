@@ -1,6 +1,7 @@
 package by.itacademy.onliner;
 
 public class OnlinerPage {
+
     public static final String URL="https://www.onliner.by";
 
     public static final String LINK_CATALOG = "//span[@class='b-main-navigation__text'][contains(text(),'Каталог')]";
