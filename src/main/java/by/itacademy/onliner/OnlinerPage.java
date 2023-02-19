@@ -1,5 +1,5 @@
 package by.itacademy.onliner;
 
 public class OnlinerPage {
-    public static final String LOGIN_URL="https://Onliner.by";
+    public static final String URL_ONLINER = "https://Onliner.by";
 }

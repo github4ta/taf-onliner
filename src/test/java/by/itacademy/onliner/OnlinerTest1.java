@@ -6,19 +6,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class OnlinerTest1 {
-    WebDriver driver;
+    ChromeDriver driver = new ChromeDriver();
     @Test
     public void testOpenOnliner() {
-        driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get(OnlinerPage1.URL);
-        driver.quit();
+        driver.get(OnlinerPage.URL_ONLINER);
     }
-
 
     @After
     public void endTest() {
-
         driver.quit();
     }
 }
