@@ -1,24 +1,22 @@
 package by.itacademy.onliner;
 
-import org.junit.After;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class OnlinerTest1 {
+public class OnlinerTest {
     WebDriver driver;
     @Test
     public void testOpenOnliner() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get(OnlinerPage1.URL);
-        driver.quit();
+        driver.get(OnlinerPage.URL);
     }
 
 
-    @After
+    @AfterEach
     public void endTest() {
-
         driver.quit();
     }
 }
