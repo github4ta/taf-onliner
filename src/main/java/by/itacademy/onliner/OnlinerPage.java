@@ -32,3 +32,4 @@ public class OnlinerPage {
     public static final String LABEL_FORUM ="//h1[@class='m-title']";
     public static final String LABEL_CART ="//div[@class='cart-form__title cart-form__title_big-alter cart-form__title_condensed-additional']";
 }
+
