@@ -38,8 +38,15 @@ public class OnlinerTest {
         driver.findElement(By.xpath(OnlinerPage.LINK_HOUSES_AND_APARTMENTS)).click();
         WebElement textOfBtnSale = driver.findElement(By.xpath(OnlinerPage.LABEL_SALE));
         Assertions.assertEquals("Продажа", textOfBtnSale.getText());
-
     }
+
+    @Test
+    public void testHousesAndFlatsRent() {
+        driver.findElement(By.xpath(OnlinerPage.LINK_HOUSES_AND_APARTMENTS)).click();
+        WebElement textOfBtnRent = driver.findElement(By.xpath(OnlinerPage.LABEL_RENT));
+        Assertions.assertEquals("Аренда", textOfBtnRent.getText());
+    }
+
 
     @AfterEach
     public void tearDown() {
