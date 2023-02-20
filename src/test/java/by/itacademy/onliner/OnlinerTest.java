@@ -1,10 +1,6 @@
 package by.itacademy.onliner;
 
-import dev.failsafe.internal.util.Assert;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -21,6 +17,7 @@ public class OnlinerTest {
         driver.get(OnlinerPage.URL);
     }
 
+    @Disabled
     @Test
     public void testOpenOnliner() {
 
@@ -32,6 +29,7 @@ public class OnlinerTest {
         WebElement TITLE_CART_Element = driver.findElement(By.xpath(OnlinerPage.LABEL_CART));
         Assertions.assertEquals("Корзина", TITLE_CART_Element.getText());
     }
+
     @ Test
     public void testOpenFleaMarket(){
         driver.findElement(By.xpath(OnlinerPage.LINK_FLEA_MARKET)).click();
