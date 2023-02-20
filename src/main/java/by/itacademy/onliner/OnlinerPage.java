@@ -32,5 +32,10 @@ public class OnlinerPage {
     public static final String LABEL_FLEA_MARKET ="//h1[@class='m-title-i']";
     public static final String LABEL_FORUM ="//h1[@class='m-title']";
     public static final String LABEL_CART ="//div[@class='cart-form__title cart-form__title_big-alter cart-form__title_condensed-additional']";
+
+    public static final String SEARCH_LINE = "//input [@class='fast-search__input']";
+    public static final String TEXT_FOR_SEARCH = "Samsung";
+    public static final String SEARCH_FRAME = "//iframe[@class='modal-iframe']";
+    public static final String RESULT_SEARCH_FIRST_PRODUCT = "//div[@class='product__title']";
 }
 
