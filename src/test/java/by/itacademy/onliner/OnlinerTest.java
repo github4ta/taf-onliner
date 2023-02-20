@@ -1,10 +1,10 @@
 package by.itacademy.onliner;
 
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -36,7 +36,7 @@ public class OnlinerTest {
         WebElement TITLE_CART_Element = driver.findElement(By.xpath(OnlinerPage.LABEL_CART));
         Assertions.assertEquals("Корзина", TITLE_CART_Element.getText());
     }
-    
+
     @Test
     public void openTV() {
         driver.findElement(By.xpath((OnlinerPage.LINK_CATALOG))).click();
@@ -46,10 +46,10 @@ public class OnlinerTest {
         Assertions.assertEquals("Телевизоры", driver.findElement(By.xpath(OnlinerPage.LABEL_TV)).getText());
     }
 
-    @ Test
-    public void testOpenFleaMarket(){
+    @Test
+    public void testOpenFleaMarket() {
         driver.findElement(By.xpath(OnlinerPage.LINK_FLEA_MARKET)).click();
-        WebElement TitleFleaMarket =driver.findElement(By.xpath(OnlinerPage.LABEL_FLEA_MARKET));
+        WebElement TitleFleaMarket = driver.findElement(By.xpath(OnlinerPage.LABEL_FLEA_MARKET));
         Assertions.assertEquals("Барахолка", TitleFleaMarket.getText());
     }
 
@@ -83,7 +83,7 @@ public class OnlinerTest {
         new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath(OnlinerPage.RESULT_SEARCH_FIRST_PRODUCT)));
         String resultSearch = driver.findElement(By.xpath(OnlinerPage.RESULT_SEARCH_FIRST_PRODUCT)).getText();
-        Assert.isTrue(resultSearch.contains(OnlinerPage.TEXT_FOR_SEARCH), "Error");
+        Assertions.assertTrue(resultSearch.contains(OnlinerPage.TEXT_FOR_SEARCH), "Error");
     }
 
     @AfterEach
