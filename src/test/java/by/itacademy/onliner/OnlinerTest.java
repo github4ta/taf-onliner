@@ -3,7 +3,6 @@ package by.itacademy.onliner;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -11,6 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.time.Duration;
 
 public class OnlinerTest {
@@ -22,12 +22,6 @@ public class OnlinerTest {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get(OnlinerPage.URL);
-    }
-
-    @Disabled
-    @Test
-    public void testOpenOnliner() {
-
     }
 
     @Test
@@ -74,11 +68,12 @@ public class OnlinerTest {
         WebElement LABEL_OBOUT_TXT = driver.findElement(By.xpath(OnlinerPage.LABEL_OBOUT_TXT));
         Assertions.assertEquals(LABEL_OBOUT_TXT.getText(), OnlinerPage.LABEL_OBOUT_TXT_HEADER);
     }
+
     @Test
-    public void testCatalogOnliner(){
+    public void testCatalogOnliner() {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         driver.findElement(By.xpath(OnlinerPage.LINK_CATALOG)).click();
-        WebElement LabelTextCatalog =driver.findElement(By.xpath(OnlinerPage.LABEL_CATALOG));
+        WebElement LabelTextCatalog = driver.findElement(By.xpath(OnlinerPage.LABEL_CATALOG));
         Assertions.assertEquals("КаталогВсе суперцены!", LabelTextCatalog.getText());
 
     }
@@ -92,6 +87,16 @@ public class OnlinerTest {
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath(OnlinerPage.RESULT_SEARCH_FIRST_PRODUCT)));
         String resultSearch = driver.findElement(By.xpath(OnlinerPage.RESULT_SEARCH_FIRST_PRODUCT)).getText();
         Assertions.assertTrue(resultSearch.contains(OnlinerPage.TEXT_FOR_SEARCH), "Error");
+    }
+
+    @Test
+    public void testOpenOnliner() {
+        By btnLoginBy = By.xpath(OnlinerPage.BUTTON_ENTRANCE);
+        WebElement btnLoginElement = driver.findElement(btnLoginBy);
+        btnLoginElement.click();
+        Util.waitFor(2);
+        WebElement loginText = driver.findElement(By.xpath(OnlinerPage.LABEL_ENTER));
+        Assertions.assertTrue(loginText.isDisplayed());
     }
 
     @AfterEach
