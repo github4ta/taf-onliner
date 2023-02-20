@@ -13,6 +13,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
+import java.time.Duration;
+
 public class OnlinerTest {
 
     WebDriver driver;
@@ -73,6 +75,14 @@ public class OnlinerTest {
         OBOUT_BTN_ELEMENT.click();
         WebElement LABEL_OBOUT_TXT = driver.findElement(By.xpath(OnlinerPage.LABEL_OBOUT_TXT));
         Assertions.assertEquals(LABEL_OBOUT_TXT.getText(), OnlinerPage.LABEL_OBOUT_TXT_HEADER);
+    }
+    @Test
+    public void testCatalogOnliner(){
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+        driver.findElement(By.xpath(OnlinerPage.LINK_CATALOG)).click();
+        WebElement LabelTextCatalog =driver.findElement(By.xpath(OnlinerPage.LABEL_CATALOG));
+        Assertions.assertEquals("КаталогВсе суперцены!", LabelTextCatalog.getText());
+
     }
 
     @Test
