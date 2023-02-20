@@ -46,6 +46,14 @@ public class OnlinerTest {
         Assertions.assertEquals("Аренда", textOfBtnRent.getText());
     }
 
+    @Test
+    public void testOboutOnliner() {
+        WebElement OBOUT_BTN_ELEMENT = driver.findElement(By.xpath(OnlinerPage.LABEL_ABOUT_THE_COMPANY));
+        OBOUT_BTN_ELEMENT.click();
+        WebElement LABEL_OBOUT_TXT = driver.findElement(By.xpath(OnlinerPage.LABEL_OBOUT_TXT));
+        Assertions.assertEquals(LABEL_OBOUT_TXT.getText(), OnlinerPage.LABEL_OBOUT_TXT_HEADER);
+        driver.quit();
+    }
 
     @AfterEach
     public void tearDown() {
