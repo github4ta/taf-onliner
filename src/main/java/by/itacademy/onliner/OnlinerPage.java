@@ -32,7 +32,8 @@ public class OnlinerPage {
     public static final String LABEL_FLEA_MARKET ="//h1[@class='m-title-i']";
     public static final String LABEL_FORUM ="//h1[@class='m-title']";
     public static final String LABEL_CART ="//div[@class='cart-form__title cart-form__title_big-alter cart-form__title_condensed-additional']";
-
     public static final String LABEL_TV ="//h1[@class='schema-header__title js-schema-header_title'][contains(text(), 'Телевизоры')]";
+    public static final String LABEL_OBOUT_TXT = "//*[@id=\"container\"]/div/div[2]/div/div/div[3]/div[1]/div/div/div[1]/div/div[1]/div";
+    public static final String LABEL_OBOUT_TXT_HEADER = "О сайте";
 }
 
