@@ -52,7 +52,6 @@ public class OnlinerTest {
         OBOUT_BTN_ELEMENT.click();
         WebElement LABEL_OBOUT_TXT = driver.findElement(By.xpath(OnlinerPage.LABEL_OBOUT_TXT));
         Assertions.assertEquals(LABEL_OBOUT_TXT.getText(), OnlinerPage.LABEL_OBOUT_TXT_HEADER);
-        driver.quit();
     }
 
     @AfterEach
