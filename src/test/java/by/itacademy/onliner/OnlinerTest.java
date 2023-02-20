@@ -99,6 +99,17 @@ public class OnlinerTest {
         Assertions.assertTrue(loginText.isDisplayed());
     }
 
+    @Test
+    public void testWithEmptyFields(){
+        driver.findElement(By.xpath(OnlinerPage.BUTTON_ENTRANCE)).click();
+        driver.findElement(By.xpath(OnlinerPage.BUTTON_REGISTRATION_ENTRANCE)).click();
+        new WebDriverWait(driver, Duration.ofSeconds(1))
+                .until(ExpectedConditions
+                        .visibilityOfElementLocated(By.xpath(OnlinerPage.LABEL_WITHOUT_PASSWORD)));
+        Assertions.assertEquals("Укажите пароль", driver.findElement(By.xpath(OnlinerPage.LABEL_WITHOUT_PASSWORD)).getText());
+        Assertions.assertEquals("Укажите ник или e-mail", driver.findElement(By.xpath(OnlinerPage.LABEL_WITHOUT_EMAIL)).getText());
+    }
+
     @AfterEach
     public void tearDown() {
         driver.quit();
