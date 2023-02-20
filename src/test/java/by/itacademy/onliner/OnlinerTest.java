@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.time.Duration;
+
 public class OnlinerTest {
 
     WebDriver driver;
@@ -65,6 +67,14 @@ public class OnlinerTest {
         OBOUT_BTN_ELEMENT.click();
         WebElement LABEL_OBOUT_TXT = driver.findElement(By.xpath(OnlinerPage.LABEL_OBOUT_TXT));
         Assertions.assertEquals(LABEL_OBOUT_TXT.getText(), OnlinerPage.LABEL_OBOUT_TXT_HEADER);
+    }
+    @Test
+    public void testCatalogOnliner(){
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+        driver.findElement(By.xpath(OnlinerPage.LINK_CATALOG)).click();
+        WebElement LabelTextCatalog =driver.findElement(By.xpath(OnlinerPage.LABEL_CATALOG));
+        Assertions.assertEquals("КаталогВсе суперцены!", LabelTextCatalog.getText());
+
     }
 
     @AfterEach

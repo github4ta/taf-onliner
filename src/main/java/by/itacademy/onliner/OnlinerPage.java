@@ -20,7 +20,7 @@ public class OnlinerPage {
 
     public static final String LABEL_COPYRIGHT = "//div[@class='footer-style__copy']";
     public static final String LABEL_ABOUT_THE_COMPANY = "//a[@href='https://blog.onliner.by/about']";
-    public static final String LABEN_CATALOG = "//div[@class='catalog-navigation__title']";
+    public static final String LABEL_CATALOG = "//div[@class='catalog-navigation__title']";
     public static final String LABEL_TV_AND_VIDEO ="//div[@class='catalog-navigation-list__aside-title'][contains(text(), 'Телевидение')]";
     public static final String BUTTON_TV ="//a[@href='https://catalog.onliner.by/tv']";
     public static final String LABEL_LAPTOPS_AND_COMPUTERS_AND_MONITOR ="//div[@class='catalog-navigation-list__aside-title'][text()=' Ноутбуки, компьютеры, мониторы ']";
