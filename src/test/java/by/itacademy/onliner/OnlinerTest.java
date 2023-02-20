@@ -21,7 +21,7 @@ public class OnlinerTest {
 
     @BeforeEach
     public void warmUp() {
-        driver = new SafariDriver();
+        driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get(OnlinerPage.URL);
     }
