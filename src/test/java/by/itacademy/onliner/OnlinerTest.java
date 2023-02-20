@@ -29,6 +29,14 @@ public class OnlinerTest {
         WebElement TITLE_CART_Element = driver.findElement(By.xpath(OnlinerPage.LABEL_CART));
         Assertions.assertEquals("Корзина", TITLE_CART_Element.getText());
     }
+    @Test
+    public void openTV(){
+        driver.findElement(By.xpath((OnlinerPage.LINK_CATALOG))).click();
+        driver.findElement(By.xpath(OnlinerPage.BUTTON_ELECTRONICS)).click();
+        driver.findElement(By.xpath(OnlinerPage.LABEL_TV_AND_VIDEO)).click();
+        driver.findElement(By.xpath(OnlinerPage.BUTTON_TV)).click();
+        Assertions.assertEquals("Телевизоры", driver.findElement(By.xpath(OnlinerPage.LABEL_TV)).getText());
+    }
 
     @ Test
     public void testOpenFleaMarket(){
