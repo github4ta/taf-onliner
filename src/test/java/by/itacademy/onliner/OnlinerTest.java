@@ -105,6 +105,12 @@ public class OnlinerTest {
         WebElement loginText = driver.findElement(By.xpath(OnlinerPage.LABEL_ENTER));
         Assertions.assertTrue(loginText.isDisplayed());
     }
+    @Test
+    public void testLabelForum(){
+        driver.findElement(By.xpath(OnlinerPage.BUTTON_FORUM)).click();
+        WebElement labelForum = driver.findElement(By.xpath(OnlinerPage.LABEL_FORUM));
+        Assertions.assertEquals("Форум", driver.findElement(By.xpath(OnlinerPage.LABEL_FORUM)).getText());
+    }
 
     @Test
     public void testWithEmptyFields(){
