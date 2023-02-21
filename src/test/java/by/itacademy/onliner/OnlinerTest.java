@@ -1,6 +1,5 @@
 package by.itacademy.onliner;
 
-import dev.failsafe.internal.util.Assert;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -9,10 +8,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
 
 public class OnlinerTest {
@@ -30,8 +27,7 @@ public class OnlinerTest {
     public void testOnlinerOpen(){
         String actualFooterCoopyright = driver.findElement(By.xpath(OnlinerPage.LABEL_COPYRIGHT)).getText();
         Util.waitFor(1);
-        Assertions.assertEquals("\n" +
-                "                © 2001—2023 Onlíner            ", actualFooterCoopyright);
+        Assertions.assertEquals("© 2001—2023 Onlíner", actualFooterCoopyright);
 
     }
 
