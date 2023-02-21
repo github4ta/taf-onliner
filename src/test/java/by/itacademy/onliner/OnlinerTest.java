@@ -123,6 +123,19 @@ public class OnlinerTest {
         Assertions.assertEquals("Укажите ник или e-mail", driver.findElement(By.xpath(OnlinerPage.LABEL_WITHOUT_EMAIL)).getText());
     }
 
+    @Test
+    public void testAbilitySelectAdvertInHouses() {
+        driver.findElement(By.xpath(OnlinerPage.LINK_HOUSES_AND_APARTMENTS)).click();
+        driver.findElement(By.xpath(OnlinerPage.LABEL_RENT)).click();
+        Util.waitForPresenceElementByXPath(driver, OnlinerPage.RENT_APPART_PRICE_FIRST_ITEM, 10000);
+        String priceOnGeneralPage = String.format("%s р.", driver.findElement(By
+                .xpath(OnlinerPage.RENT_APPART_PRICE_FIRST_ITEM)).getText());
+        driver.findElement(By.xpath(OnlinerPage.RENT_APPART_PRICE_FIRST_ITEM)).click();
+        Util.waitForPresenceElementByXPath(driver, OnlinerPage.RENT_APPART_PRICE_EXACT, 10000);
+        String priceOnPrivatePage = driver.findElement(By.xpath(OnlinerPage.RENT_APPART_PRICE_EXACT)).getText();
+        Assertions.assertEquals(priceOnGeneralPage, priceOnPrivatePage);
+        }
+
     @AfterEach
     public void tearDown() {
         driver.quit();

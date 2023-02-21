@@ -43,4 +43,7 @@ public class OnlinerPage {
     public static final String  LABEL_ENTER = "/html/body/div[6]/div/div/div/div/div/div/div/div[2]/div/div[1]";
     public static final String LABEL_WITHOUT_PASSWORD = "//*[@id=\"auth-container\"]/div/div[2]/div/form/div[2]/div/div/div[2]/div";
     public static final String LABEL_WITHOUT_EMAIL = "//*[@id=\"auth-container\"]/div/div[2]/div/form/div[1]/div/div[2]/div/div/div[2]/div";
+
+    public static final String RENT_APPART_PRICE_FIRST_ITEM = "//span[@data-bind=\"text: SearchApartments.formatPrice(apartment.price, 'BYN')\"]";
+    public static final String RENT_APPART_PRICE_EXACT = "//span[@class='apartment-bar__price apartment-bar__price_primary']";
 }
