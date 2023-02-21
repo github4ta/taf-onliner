@@ -10,7 +10,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
 
 public class OnlinerTest {
@@ -22,6 +21,14 @@ public class OnlinerTest {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get(OnlinerPage.URL);
+    }
+
+    @Test
+    public void testOnlinerOpen(){
+        String actualFooterCoopyright = driver.findElement(By.xpath(OnlinerPage.LABEL_COPYRIGHT)).getText();
+        Util.waitFor(1);
+        Assertions.assertEquals("© 2001—2023 Onlíner", actualFooterCoopyright);
+
     }
 
     @Test
@@ -103,6 +110,17 @@ public class OnlinerTest {
         driver.findElement(By.xpath(OnlinerPage.BUTTON_FORUM)).click();
         WebElement labelForum = driver.findElement(By.xpath(OnlinerPage.LABEL_FORUM));
         Assertions.assertEquals("Форум", driver.findElement(By.xpath(OnlinerPage.LABEL_FORUM)).getText());
+    }
+
+    @Test
+    public void testWithEmptyFields(){
+        driver.findElement(By.xpath(OnlinerPage.BUTTON_ENTRANCE)).click();
+        driver.findElement(By.xpath(OnlinerPage.BUTTON_REGISTRATION_ENTRANCE)).click();
+        new WebDriverWait(driver, Duration.ofSeconds(1))
+                .until(ExpectedConditions
+                        .visibilityOfElementLocated(By.xpath(OnlinerPage.LABEL_WITHOUT_PASSWORD)));
+        Assertions.assertEquals("Укажите пароль", driver.findElement(By.xpath(OnlinerPage.LABEL_WITHOUT_PASSWORD)).getText());
+        Assertions.assertEquals("Укажите ник или e-mail", driver.findElement(By.xpath(OnlinerPage.LABEL_WITHOUT_EMAIL)).getText());
     }
 
     @AfterEach
