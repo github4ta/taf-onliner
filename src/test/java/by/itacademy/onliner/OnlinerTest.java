@@ -126,66 +126,30 @@ public class OnlinerTest {
 
     @Test
     public void testFooterElements(){
-        Util.waitFor(10);
         int count=driver.findElements(By.className(OnlinerPage.FOOTER_ELEMENTS_CLASS)).size();
-        Util.waitFor(10);
         System.out.println(count);
-        Util.waitFor(5);
         WebElement footerOKompaniiElement=driver.findElement(By.xpath(OnlinerPage.FOOTER_O_KOMPANII));
-        Util.waitFor(5);
-        Assertions.assertEquals("\n" +
-                "                        О компании                    ",footerOKompaniiElement.getText());
-        Util.waitFor(5);
+        Assertions.assertEquals("О компании",footerOKompaniiElement.getText());
         WebElement footerKontaktyRedElement=driver.findElement(By.xpath(OnlinerPage.FOOTER_KONTAKTY_RED));
-        Util.waitFor(5);
-        Assertions.assertEquals("\n" +
-                "                        Контакты редакции                    ",footerKontaktyRedElement.getText());
-        Util.waitFor(5);
+        Assertions.assertEquals("Контакты редакции",footerKontaktyRedElement.getText());
         WebElement footerReklamaElement=driver.findElement(By.xpath(OnlinerPage.FOOTER_REKLAMA));
-        Util.waitFor(5);
-        Assertions.assertEquals("\n" +
-                "                        Реклама                    ",footerReklamaElement.getText());
-        Util.waitFor(5);
+        Assertions.assertEquals("Реклама",footerReklamaElement.getText());
         WebElement footerTarifyElement=driver.findElement(By.xpath(OnlinerPage.FOOTER_TARIFY));
-        Util.waitFor(5);
-        Assertions.assertEquals("\n" +
-                "                        Тарифы                    ",footerTarifyElement.getText());
-        Util.waitFor(5);
+        Assertions.assertEquals("Тарифы",footerTarifyElement.getText());
         WebElement footerVakansiiElement= driver.findElement(By.xpath(OnlinerPage.FOOTER_VAKANSII));
-        Util.waitFor(5);
-        Assertions.assertEquals("\n" +
-                "                        Вакансии                    ",footerVakansiiElement.getText());
-        Util.waitFor(5);
+        Assertions.assertEquals("Вакансии",footerVakansiiElement.getText());
         WebElement footerManifestElement=driver.findElement(By.xpath(OnlinerPage.FOOTER_MANIFEST));
-        Util.waitFor(5);
-        Assertions.assertEquals("\n" +
-                "                        Манифест                    ",footerManifestElement.getText() );
-        Util.waitFor(5);
+        Assertions.assertEquals("Манифест",footerManifestElement.getText() );
         WebElement footerPolsovatSoglashenieElement=driver.findElement(By.xpath(OnlinerPage.FOOTER_POLSOVAT_SOGLASHENIE));
-        Util.waitFor(5);
-        Assertions.assertEquals("\n" +
-                "                        Пользовательское соглашение                    ",footerPolsovatSoglashenieElement.getText() );
-        Util.waitFor(5);
+        Assertions.assertEquals("Пользовательское соглашение",footerPolsovatSoglashenieElement.getText() );
         WebElement footerPublDogovoriElement=driver.findElement(By.xpath(OnlinerPage.FOOTER_PUBL_DOGOVORI));
-        Util.waitFor(5);
-        Assertions.assertEquals("\n" +
-                "                        Публичные договоры                    ",footerPublDogovoriElement.getText() );
-        Util.waitFor(5);
+        Assertions.assertEquals("Публичные договоры",footerPublDogovoriElement.getText() );
         WebElement footerPolitikaKonfElement=driver.findElement(By.xpath(OnlinerPage.FOOTER_POLITIKA_KONF));
-        Util.waitFor(5);
-        Assertions.assertEquals("\n" +
-                "                        Политика конфиденциальности                    ",footerPolitikaKonfElement.getText() );
-        Util.waitFor(5);
+        Assertions.assertEquals("Политика конфиденциальности",footerPolitikaKonfElement.getText() );
         WebElement footerPodderzkaPolsovateleiElement=driver.findElement(By.xpath(OnlinerPage.FOOTER_PODDERZKA_POLSOVATELEI));
-        Util.waitFor(5);
-        Assertions.assertEquals("\n" +
-                "                        Поддержка пользователей                    ",footerPodderzkaPolsovateleiElement.getText() );
-        Util.waitFor(5);
+        Assertions.assertEquals("Поддержка пользователей",footerPodderzkaPolsovateleiElement.getText() );
         WebElement footerPravilaVozvrataElement=driver.findElement(By.xpath(OnlinerPage.FOOTER_PRAVILA_VOZVRATA));
-        Util.waitFor(5);
-        Assertions.assertEquals("\n" +
-                "                        Правила возврата                    ",footerPravilaVozvrataElement.getText() );
-        Util.waitFor(5);
+        Assertions.assertEquals("Правила возврата",footerPravilaVozvrataElement.getText() );
     }
 
     public void testSelectNews(){
