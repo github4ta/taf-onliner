@@ -43,6 +43,9 @@ public class OnlinerPage {
     public static final String LABEL_ENTER = "/html/body/div[6]/div/div/div/div/div/div/div/div[2]/div/div[1]";
     public static final String LABEL_WITHOUT_PASSWORD = "//*[@id=\"auth-container\"]/div/div[2]/div/form/div[2]/div/div/div[2]/div";
     public static final String LABEL_WITHOUT_EMAIL = "//*[@id=\"auth-container\"]/div/div[2]/div/form/div[1]/div/div[2]/div/div/div[2]/div";
+    public static final String LABEL_NUMBERS_OF_OFFERS_LAPTOPS = "//div[@class='schema-product__offers']";
+    public static final String LABEL_ADD_LAPTOPS_TO_CART = "//div[@class='offers-list__part offers-list__part_action']//a[2]";
+    public static final String LABEL_ALL_LIST_LAPTOP_ON_PAGE = "//div[@class='offers-list__part offers-list__part_action']//a[2]";
     public static final String FOOTER_ELEMENTS_CLASS="footer-style__item";
     public static final String FOOTER_O_KOMPANII="/html/body/div[4]/footer/div/div/div/div[1]/ul/li[1]/a";
     public static final String FOOTER_KONTAKTY_RED="/html/body/div[4]/footer/div/div/div/div[1]/ul/li[2]/a";

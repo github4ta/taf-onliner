@@ -12,6 +12,7 @@ import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
+import java.util.List;
 
 public class OnlinerTest {
 
@@ -106,6 +107,7 @@ public class OnlinerTest {
         WebElement loginText = driver.findElement(By.xpath(OnlinerPage.LABEL_ENTER));
         Assertions.assertTrue(loginText.isDisplayed());
     }
+    
     @Test
     public void testLabelForum(){
         driver.findElement(By.xpath(OnlinerPage.LINK_FORUM)).click();
@@ -122,6 +124,21 @@ public class OnlinerTest {
                         .visibilityOfElementLocated(By.xpath(OnlinerPage.LABEL_WITHOUT_PASSWORD)));
         Assertions.assertEquals("Укажите пароль", driver.findElement(By.xpath(OnlinerPage.LABEL_WITHOUT_PASSWORD)).getText());
         Assertions.assertEquals("Укажите ник или e-mail", driver.findElement(By.xpath(OnlinerPage.LABEL_WITHOUT_EMAIL)).getText());
+    }
+    
+    @Test
+    public void testAddLaptopInCart() {
+        driver.findElement(By.xpath(OnlinerPage.LINK_CATALOG)).click();
+        driver.findElement(By.xpath(OnlinerPage.BUTTON_COMPUTERS_AND_NETWORKS)).click();
+        driver.findElement(By.xpath(OnlinerPage.LABEL_LAPTOPS_AND_COMPUTERS_AND_MONITOR)).click();
+        driver.findElement(By.xpath(OnlinerPage.LABEL_LAPTOPS)).click();
+        List<WebElement> topLaptop = driver.findElements(By.xpath(OnlinerPage.LABEL_ALL_LIST_LAPTOP_ON_PAGE));
+        String laptopNumberOne = topLaptop.get(0).getText();
+        driver.findElement(By.xpath(OnlinerPage.LABEL_NUMBERS_OF_OFFERS_LAPTOPS)).click();
+        driver.findElement(By.xpath(OnlinerPage.LABEL_ADD_LAPTOPS_TO_CART)).click();
+        Util.waitFor(2);
+        String actual = driver.findElement(By.xpath("//div[@class='product-recommended__title']/div")).getText();
+        Assertions.assertEquals(laptopNumberOne, actual);
     }
 
     @Test
@@ -152,6 +169,7 @@ public class OnlinerTest {
         Assertions.assertEquals("Правила возврата",footerPravilaVozvrataElement.getText() );
     }
 
+    @Test
     public void testSelectNews(){
         driver.findElement(By.xpath(OnlinerPage.LINK_NEWS)).click();
         driver.findElement(By.xpath(OnlinerPage.NEWS_MONEY_LINK)).click();
@@ -162,6 +180,7 @@ public class OnlinerTest {
         Assertions.assertEquals(firstNews, driver.findElement(By.xpath(OnlinerPage.ARTICLE_TITLE)).getText());
     }
 
+    @Test
     public void testAbilitySelectAdvertInHouses() {
         driver.findElement(By.xpath(OnlinerPage.LINK_HOUSES_AND_APARTMENTS)).click();
         driver.findElement(By.xpath(OnlinerPage.LABEL_RENT)).click();
