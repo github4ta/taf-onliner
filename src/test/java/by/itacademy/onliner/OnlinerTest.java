@@ -17,7 +17,7 @@ public class OnlinerTest {
 
     WebDriver driver;
 
-   /* @BeforeEach
+    @BeforeEach
     public void warmUp() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -122,14 +122,10 @@ public class OnlinerTest {
                         .visibilityOfElementLocated(By.xpath(OnlinerPage.LABEL_WITHOUT_PASSWORD)));
         Assertions.assertEquals("Укажите пароль", driver.findElement(By.xpath(OnlinerPage.LABEL_WITHOUT_PASSWORD)).getText());
         Assertions.assertEquals("Укажите ник или e-mail", driver.findElement(By.xpath(OnlinerPage.LABEL_WITHOUT_EMAIL)).getText());
-    }*/
+    }
 
     @Test
     public void testFooterElements(){
-
-     driver = new SafariDriver();
-        driver.manage().window().maximize();
-        driver.get(OnlinerPage.URL);
         Util.waitFor(10);
         int count=driver.findElements(By.className(OnlinerPage.FOOTER_ELEMENTS_CLASS)).size();
         Util.waitFor(10);
