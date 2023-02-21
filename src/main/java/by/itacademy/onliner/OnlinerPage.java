@@ -43,4 +43,9 @@ public class OnlinerPage {
     public static final String  LABEL_ENTER = "/html/body/div[6]/div/div/div/div/div/div/div/div[2]/div/div[1]";
     public static final String LABEL_WITHOUT_PASSWORD = "//*[@id=\"auth-container\"]/div/div[2]/div/form/div[2]/div/div/div[2]/div";
     public static final String LABEL_WITHOUT_EMAIL = "//*[@id=\"auth-container\"]/div/div[2]/div/form/div[1]/div/div[2]/div/div/div[2]/div";
+
+    public static final String NEWS_MONEY_LINK = "//h2/a[contains(text(),'Кошелек')]";
+    public static final String FIRST_TITLE = "//a[@class='news-tidings__link']/span[contains(text(),'Этот белорусский продукт')][1]";
+    public static final String FIRST_BLOCK_OF_NEWS = "//*[@id='container']//div[@data-post-date='1676985631']";
+    public static final String ARTICLE_TITLE = "//*[@id='container']//h1";
 }
