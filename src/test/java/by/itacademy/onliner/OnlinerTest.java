@@ -107,7 +107,7 @@ public class OnlinerTest {
     }
     @Test
     public void testLabelForum(){
-        driver.findElement(By.xpath(OnlinerPage.BUTTON_FORUM)).click();
+        driver.findElement(By.xpath(OnlinerPage.LINK_FORUM)).click();
         WebElement labelForum = driver.findElement(By.xpath(OnlinerPage.LABEL_FORUM));
         Assertions.assertEquals("Форум", driver.findElement(By.xpath(OnlinerPage.LABEL_FORUM)).getText());
     }
