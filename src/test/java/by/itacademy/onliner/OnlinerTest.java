@@ -124,6 +124,16 @@ public class OnlinerTest {
     }
 
     @Test
+    public void testSelectNews(){
+        driver.findElement(By.xpath(OnlinerPage.LINK_NEWS)).click();
+        driver.findElement(By.xpath(OnlinerPage.NEWS_MONEY_LINK)).click();
+        WebElement blockOfNews = driver.findElement(By.xpath(OnlinerPage.FIRST_TITLE));
+        String firstNews = blockOfNews.getText();
+        driver.findElement(By.xpath(OnlinerPage.FIRST_BLOCK_OF_NEWS)).click();
+        WebElement title = driver.findElement(By.xpath(OnlinerPage.ARTICLE_TITLE));
+        Assertions.assertEquals(firstNews, driver.findElement(By.xpath(OnlinerPage.ARTICLE_TITLE)).getText());
+    }
+
     public void testAbilitySelectAdvertInHouses() {
         driver.findElement(By.xpath(OnlinerPage.LINK_HOUSES_AND_APARTMENTS)).click();
         driver.findElement(By.xpath(OnlinerPage.LABEL_RENT)).click();
