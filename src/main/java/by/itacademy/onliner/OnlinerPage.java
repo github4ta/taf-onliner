@@ -17,6 +17,7 @@ public class OnlinerPage {
     public static final String BUTTON_ELECTRONICS ="//span[@class='catalog-navigation-classifier__item-title-wrapper'][text()='Электроника']";
     public static final String BUTTON_COMPUTERS_AND_NETWORKS ="//span[@class='catalog-navigation-classifier__item-title-wrapper'][contains(text(),'Компьютеры')]";
     public static final String BUTTON_APPLIANCES ="//span[@class='catalog-navigation-classifier__item-title-wrapper'][text()='Бытовая техника']";
+    public static final String BUTTON_REGISTRATION_ENTRANCE = "//button[@class='auth-button auth-button_primary auth-button_middle auth-form__button auth-form__button_width_full']";
 
     public static final String LABEL_COPYRIGHT = "//div[@class='footer-style__copy']";
     public static final String LABEL_ABOUT_THE_COMPANY = "//a[@href='https://blog.onliner.by/about']";
@@ -40,5 +41,6 @@ public class OnlinerPage {
     public static final String LABEL_OBOUT_TXT = "//*[@id=\"container\"]/div/div[2]/div/div/div[3]/div[1]/div/div/div[1]/div/div[1]/div";
     public static final String LABEL_OBOUT_TXT_HEADER = "О сайте";
     public static final String  LABEL_ENTER = "/html/body/div[6]/div/div/div/div/div/div/div/div[2]/div/div[1]";
+    public static final String LABEL_WITHOUT_PASSWORD = "//*[@id=\"auth-container\"]/div/div[2]/div/form/div[2]/div/div/div[2]/div";
+    public static final String LABEL_WITHOUT_EMAIL = "//*[@id=\"auth-container\"]/div/div[2]/div/form/div[1]/div/div[2]/div/div/div[2]/div";
 }
-
