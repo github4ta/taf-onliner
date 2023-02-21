@@ -43,4 +43,9 @@ public class OnlinerPage {
     public static final String  LABEL_ENTER = "/html/body/div[6]/div/div/div/div/div/div/div/div[2]/div/div[1]";
     public static final String LABEL_WITHOUT_PASSWORD = "//*[@id=\"auth-container\"]/div/div[2]/div/form/div[2]/div/div/div[2]/div";
     public static final String LABEL_WITHOUT_EMAIL = "//*[@id=\"auth-container\"]/div/div[2]/div/form/div[1]/div/div[2]/div/div/div[2]/div";
+    public static final String INPUT_LOGIN = "//*[@id='auth-container']/div/div[2]/div/form/div[1]/div/div[2]/div/div/div/div/input";
+
+    public static final String BTN_ENTER = "//*[@id='auth-container']/div/div[2]/div/form/div[3]/button";
+    public static final String INPUT_PASSWORD = "//*[@id=\"auth-container\"]/div/div[2]/div/form/div[2]/div/div/div[2]/div";
+
 }
