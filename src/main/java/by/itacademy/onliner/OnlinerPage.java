@@ -43,4 +43,17 @@ public class OnlinerPage {
     public static final String  LABEL_ENTER = "/html/body/div[6]/div/div/div/div/div/div/div/div[2]/div/div[1]";
     public static final String LABEL_WITHOUT_PASSWORD = "//*[@id=\"auth-container\"]/div/div[2]/div/form/div[2]/div/div/div[2]/div";
     public static final String LABEL_WITHOUT_EMAIL = "//*[@id=\"auth-container\"]/div/div[2]/div/form/div[1]/div/div[2]/div/div/div[2]/div";
+    public static final String FOOTER_ELEMENTS_CLASS="footer-style__item";
+    public static final String FOOTER_O_KOMPANII="/html/body/div[4]/footer/div/div/div/div[1]/ul/li[1]/a";
+    public static final String FOOTER_KONTAKTY_RED="/html/body/div[4]/footer/div/div/div/div[1]/ul/li[2]/a";
+    public static final String FOOTER_REKLAMA="/html/body/div[4]/footer/div/div/div/div[1]/ul/li[3]/a";
+    public static final String FOOTER_TARIFY="/html/body/div[4]/footer/div/div/div/div[1]/ul/li[4]/a";
+    public static final String FOOTER_VAKANSII="/html/body/div[4]/footer/div/div/div/div[1]/ul/li[5]/a";
+    public static final String FOOTER_MANIFEST="/html/body/div[4]/footer/div/div/div/div[1]/ul/li[6]/a";
+    public static final String FOOTER_POLSOVAT_SOGLASHENIE="/html/body/div[4]/footer/div/div/div/div[1]/ul/li[7]/a";
+    public static final String FOOTER_PUBL_DOGOVORI="/html/body/div[4]/footer/div/div/div/div[1]/ul/li[8]/a";
+    public static final String FOOTER_POLITIKA_KONF="/html/body/div[4]/footer/div/div/div/div[1]/ul/li[9]/a";
+    public static final String FOOTER_PODDERZKA_POLSOVATELEI="/html/body/div[4]/footer/div/div/div/div[1]/ul/li[10]/a";
+    public static final String FOOTER_PRAVILA_VOZVRATA="/html/body/div[4]/footer/div/div/div/div[1]/ul/li[11]/a";
+
 }

@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
@@ -16,7 +17,7 @@ public class OnlinerTest {
 
     WebDriver driver;
 
-    @BeforeEach
+   /* @BeforeEach
     public void warmUp() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -121,7 +122,81 @@ public class OnlinerTest {
                         .visibilityOfElementLocated(By.xpath(OnlinerPage.LABEL_WITHOUT_PASSWORD)));
         Assertions.assertEquals("Укажите пароль", driver.findElement(By.xpath(OnlinerPage.LABEL_WITHOUT_PASSWORD)).getText());
         Assertions.assertEquals("Укажите ник или e-mail", driver.findElement(By.xpath(OnlinerPage.LABEL_WITHOUT_EMAIL)).getText());
+    }*/
+
+    @Test
+    public void testFooterElements(){
+
+     driver = new SafariDriver();
+        driver.manage().window().maximize();
+        driver.get(OnlinerPage.URL);
+        Util.waitFor(10);
+        int count=driver.findElements(By.className(OnlinerPage.FOOTER_ELEMENTS_CLASS)).size();
+        Util.waitFor(10);
+        System.out.println(count);
+        Util.waitFor(5);
+        WebElement footerOKompaniiElement=driver.findElement(By.xpath(OnlinerPage.FOOTER_O_KOMPANII));
+        Util.waitFor(5);
+        Assertions.assertEquals("\n" +
+                "                        О компании                    ",footerOKompaniiElement.getText());
+        Util.waitFor(5);
+        WebElement footerKontaktyRedElement=driver.findElement(By.xpath(OnlinerPage.FOOTER_KONTAKTY_RED));
+        Util.waitFor(5);
+        Assertions.assertEquals("\n" +
+                "                        Контакты редакции                    ",footerKontaktyRedElement.getText());
+        Util.waitFor(5);
+        WebElement footerReklamaElement=driver.findElement(By.xpath(OnlinerPage.FOOTER_REKLAMA));
+        Util.waitFor(5);
+        Assertions.assertEquals("\n" +
+                "                        Реклама                    ",footerReklamaElement.getText());
+        Util.waitFor(5);
+        WebElement footerTarifyElement=driver.findElement(By.xpath(OnlinerPage.FOOTER_TARIFY));
+        Util.waitFor(5);
+        Assertions.assertEquals("\n" +
+                "                        Тарифы                    ",footerTarifyElement.getText());
+        Util.waitFor(5);
+        WebElement footerVakansiiElement= driver.findElement(By.xpath(OnlinerPage.FOOTER_VAKANSII));
+        Util.waitFor(5);
+        Assertions.assertEquals("\n" +
+                "                        Вакансии                    ",footerVakansiiElement.getText());
+        Util.waitFor(5);
+        WebElement footerManifestElement=driver.findElement(By.xpath(OnlinerPage.FOOTER_MANIFEST));
+        Util.waitFor(5);
+        Assertions.assertEquals("\n" +
+                "                        Манифест                    ",footerManifestElement.getText() );
+        Util.waitFor(5);
+        WebElement footerPolsovatSoglashenieElement=driver.findElement(By.xpath(OnlinerPage.FOOTER_POLSOVAT_SOGLASHENIE));
+        Util.waitFor(5);
+        Assertions.assertEquals("\n" +
+                "                        Пользовательское соглашение                    ",footerPolsovatSoglashenieElement.getText() );
+        Util.waitFor(5);
+        WebElement footerPublDogovoriElement=driver.findElement(By.xpath(OnlinerPage.FOOTER_PUBL_DOGOVORI));
+        Util.waitFor(5);
+        Assertions.assertEquals("\n" +
+                "                        Публичные договоры                    ",footerPublDogovoriElement.getText() );
+        Util.waitFor(5);
+        WebElement footerPolitikaKonfElement=driver.findElement(By.xpath(OnlinerPage.FOOTER_POLITIKA_KONF));
+        Util.waitFor(5);
+        Assertions.assertEquals("\n" +
+                "                        Политика конфиденциальности                    ",footerPolitikaKonfElement.getText() );
+        Util.waitFor(5);
+        WebElement footerPodderzkaPolsovateleiElement=driver.findElement(By.xpath(OnlinerPage.FOOTER_PODDERZKA_POLSOVATELEI));
+        Util.waitFor(5);
+        Assertions.assertEquals("\n" +
+                "                        Поддержка пользователей                    ",footerPodderzkaPolsovateleiElement.getText() );
+        Util.waitFor(5);
+        WebElement footerPravilaVozvrataElement=driver.findElement(By.xpath(OnlinerPage.FOOTER_PRAVILA_VOZVRATA));
+        Util.waitFor(5);
+        Assertions.assertEquals("\n" +
+                "                        Правила возврата                    ",footerPravilaVozvrataElement.getText() );
+        Util.waitFor(5);
+
+
+
     }
+
+
+
 
     @AfterEach
     public void tearDown() {
