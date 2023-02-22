@@ -202,6 +202,19 @@ public class OnlinerTest {
         String priceOnPrivatePage = driver.findElement(By.xpath(OnlinerPage.RENT_APPART_PRICE_EXACT)).getText();
         Assertions.assertEquals(priceOnGeneralPage, priceOnPrivatePage);
     }
+    
+    @Test
+    public void testAbilitySelectForumTheme(){
+        driver.findElement(By.xpath(OnlinerPage.LINK_FORUM)).click();
+        driver.findElement(By.xpath(OnlinerPage.LABEL_FORUM)).click();
+        Util.waitFor(2);
+        List<WebElement> forumThemes = driver.findElements(By.xpath(OnlinerPage.LIST_OF_FORUM_THEMES));
+        String firstForumTheme = forumThemes.get(0).getText();
+        Util.waitFor(2);
+        driver.findElements(By.xpath(OnlinerPage.LIST_OF_FORUM_THEMES)).get(0).click();
+        Assertions.assertEquals(firstForumTheme, driver.findElement(By.xpath(OnlinerPage.TITLE_FIRST_FORUM_THEME)).getText());
+    }
+
     @Test
     public void testChoosingInServices() {
         driver.findElement(By.xpath(OnlinerPage.LINK_SERVICES)).click();
