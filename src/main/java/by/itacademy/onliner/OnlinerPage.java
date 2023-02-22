@@ -11,7 +11,8 @@ public class OnlinerPage {
     public static final String LINK_SERVICES = "//span[@class='b-main-navigation__text'][contains(text(),'Услуги')]";
     public static final String LINK_FLEA_MARKET = "//span[@class='b-main-navigation__text'][contains(text(),'Барахолка')]";
     public static final String LINK_FORUM = "//span[@class='b-main-navigation__text'][contains(text(),'Форум')]";
-
+    public static final String LINK_MOBILE_PHONE = " //*[@id='minWidth']/div/div[2]/div[2]/div/div[5]/div[1]/div[1]/ul/li[1]/a";
+    public static final String LINK_FIRST_MOBILE_PHONE = "//*[@id='minWidth']/div/div[2]/div[2]/div/div[3]/div[1]/div[3]/table/tbody/tr[2]/td[1]/table/tbody/tr/td[2]/div/table/tbody/tr/td/h2/a";
     public static final String BUTTON_ENTRANCE = "//div[@class='auth-bar__item auth-bar__item--text']";
     public static final String BUTTON_CART = "//a[@class='auth-bar__item auth-bar__item--cart']";
     public static final String BUTTON_ELECTRONICS = "//span[@class='catalog-navigation-classifier__item-title-wrapper'][text()='Электроника']";

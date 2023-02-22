@@ -191,6 +191,25 @@ public class OnlinerTest {
         String priceOnPrivatePage = driver.findElement(By.xpath(OnlinerPage.RENT_APPART_PRICE_EXACT)).getText();
         Assertions.assertEquals(priceOnGeneralPage, priceOnPrivatePage);
     }
+    @Test
+    public void testSearchMobilePhone(){
+        // Открываем сайт и кликаем на "Барахолка"
+        WebElement LinkTextFleaMarket = driver.findElement(By.xpath(OnlinerPage.LINK_FLEA_MARKET));
+        LinkTextFleaMarket.click();
+        // кликаем на ссылку "Мобильные телефоны"
+        WebElement LinkTextMobilePhone  = driver.findElement(By.xpath(OnlinerPage.LINK_MOBILE_PHONE));
+        LinkTextMobilePhone.click();
+        // Кликаем на первой ссылке в выдаче объявлений
+        WebElement LinkOfFirstAd = driver.findElement(By.xpath(OnlinerPage.LINK_FIRST_MOBILE_PHONE));
+        LinkOfFirstAd.click();
+       // Util.waitFor(10);
+       //  Util.waitForPresenceElementByXPath(driver,)
+        // Проверяем что название объявления соответствует тексту названия ссылки
+        WebElement LabelTextFirstAd = driver.findElement(By.xpath(OnlinerPage.LINK_FIRST_MOBILE_PHONE));
+        Assertions.assertEquals("КУПЛЮ ТЕЛЕФОН СМАРТФОН БЫСТРО ДОРОГО ВЫЕЗД", LabelTextFirstAd.getText());
+
+
+    }
 
     @AfterEach
     public void tearDown() {
