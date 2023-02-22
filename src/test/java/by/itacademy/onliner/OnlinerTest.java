@@ -1,5 +1,6 @@
 package by.itacademy.onliner;
 
+import dev.failsafe.internal.util.Assert;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -124,6 +125,16 @@ public class OnlinerTest {
         Assertions.assertEquals("Укажите пароль", driver.findElement(By.xpath(OnlinerPage.LABEL_WITHOUT_PASSWORD)).getText());
         Assertions.assertEquals("Укажите ник или e-mail", driver.findElement(By.xpath(OnlinerPage.LABEL_WITHOUT_EMAIL)).getText());
     }
+    
+    @Test
+    public void testLoginFormWithEmptyPassword() {
+        driver.findElement(By.xpath(OnlinerPage.BUTTON_ENTRANCE)).click();
+        WebElement inputLogin = driver.findElement(By.xpath(OnlinerPage.INPUT_LOGIN));
+        inputLogin.sendKeys("Nataliya0405");
+        driver.findElement(By.xpath(OnlinerPage.BTN_ENTER)).click();
+        Util.waitFor(40);
+        Assertions.assertEquals("Укажите пароль", driver.findElement(By.xpath(OnlinerPage.INPUT_PASSWORD)).getText());
+    }
 
     @Test
     public void testAddLaptopInCart() {
@@ -191,6 +202,7 @@ public class OnlinerTest {
         String priceOnPrivatePage = driver.findElement(By.xpath(OnlinerPage.RENT_APPART_PRICE_EXACT)).getText();
         Assertions.assertEquals(priceOnGeneralPage, priceOnPrivatePage);
     }
+    
     @Test
     public void testAbilitySelectForumTheme(){
         driver.findElement(By.xpath(OnlinerPage.LINK_FORUM)).click();
@@ -202,6 +214,18 @@ public class OnlinerTest {
         driver.findElements(By.xpath(OnlinerPage.LIST_OF_FORUM_THEMES)).get(0).click();
         Assertions.assertEquals(firstForumTheme, driver.findElement(By.xpath(OnlinerPage.TITLE_FIRST_FORUM_THEME)).getText());
     }
+
+    @Test
+    public void testChoosingInServices() {
+        driver.findElement(By.xpath(OnlinerPage.LINK_SERVICES)).click();
+        WebElement servicesFirstItem = driver.findElement(By.xpath(OnlinerPage.SERVICES_PRICE_FIRST_ITEM));
+        String firstServicesItem = servicesFirstItem.getText();
+        servicesFirstItem.click();
+        WebElement servicesFirstItemExact = driver.findElement(By.xpath(OnlinerPage.SERVICES_PRICE_EXACT));
+        String firstServicesItemExact = servicesFirstItemExact.getText();
+        Assertions.assertEquals(firstServicesItem,firstServicesItemExact);
+    }
+
     @AfterEach
     public void tearDown() {
         driver.quit();

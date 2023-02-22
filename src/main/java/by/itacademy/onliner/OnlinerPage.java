@@ -43,6 +43,13 @@ public class OnlinerPage {
     public static final String LABEL_ENTER = "/html/body/div[6]/div/div/div/div/div/div/div/div[2]/div/div[1]";
     public static final String LABEL_WITHOUT_PASSWORD = "//*[@id=\"auth-container\"]/div/div[2]/div/form/div[2]/div/div/div[2]/div";
     public static final String LABEL_WITHOUT_EMAIL = "//*[@id=\"auth-container\"]/div/div[2]/div/form/div[1]/div/div[2]/div/div/div[2]/div";
+
+    public static final String INPUT_LOGIN = "//*[@id='auth-container']/div/div[2]/div/form/div[1]/div/div[2]/div/div/div/div/input";
+
+    public static final String BTN_ENTER = "//*[@id='auth-container']/div/div[2]/div/form/div[3]/button";
+    public static final String INPUT_PASSWORD = "//*[@id=\"auth-container\"]/div/div[2]/div/form/div[2]/div/div/div[2]/div";
+
+
     public static final String LABEL_NUMBERS_OF_OFFERS_LAPTOPS = "//div[@class='schema-product__offers']";
     public static final String LABEL_ADD_LAPTOPS_TO_CART = "//div[@class='offers-list__part offers-list__part_action']//a[2]";
     public static final String LABEL_ALL_LIST_LAPTOP_ON_PAGE = "//div[@class='offers-list__part offers-list__part_action']//a[2]";
@@ -66,4 +73,6 @@ public class OnlinerPage {
     public static final String RENT_APPART_PRICE_EXACT = "//span[@class='apartment-bar__price apartment-bar__price_primary']";
     public static final String LIST_OF_FORUM_THEMES = "//ul[@class = 'b-list-topics']//li//h3";
     public static final String TITLE_FIRST_FORUM_THEME = "//div[@class = 'b-mnforum-header']//h1//a";
+    public static final String SERVICES_PRICE_EXACT = "//*[@id=\"container\"]/div/div[2]/div/div/div/div/div/div[1]/div/div/div/div[1]/div";
+    public static final String SERVICES_PRICE_FIRST_ITEM ="//*[@id=\"service-list\"]/div[2]/div/div/div[3]/search-tasks-list/div/div/div[1]/search-tasks-item/div/div/div[1]/div/a/span[2]/span[1]";
 }
