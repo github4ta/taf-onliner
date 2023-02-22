@@ -64,4 +64,6 @@ public class OnlinerPage {
     public static final String ARTICLE_TITLE = "//*[@id='container']//h1";
     public static final String RENT_APPART_PRICE_FIRST_ITEM = "//span[@data-bind=\"text: SearchApartments.formatPrice(apartment.price, 'BYN')\"]";
     public static final String RENT_APPART_PRICE_EXACT = "//span[@class='apartment-bar__price apartment-bar__price_primary']";
+    public static final String LIST_OF_FORUM_THEMES = "//ul[@class = 'b-list-topics']//li//h3";
+    public static final String TITLE_FIRST_FORUM_THEME = "//div[@class = 'b-mnforum-header']//h1//a";
 }
