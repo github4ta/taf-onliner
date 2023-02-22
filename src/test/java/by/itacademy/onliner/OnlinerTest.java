@@ -1,5 +1,6 @@
 package by.itacademy.onliner;
 
+import dev.failsafe.internal.util.Assert;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -200,6 +201,16 @@ public class OnlinerTest {
         Util.waitForPresenceElementByXPath(driver, OnlinerPage.RENT_APPART_PRICE_EXACT, 10000);
         String priceOnPrivatePage = driver.findElement(By.xpath(OnlinerPage.RENT_APPART_PRICE_EXACT)).getText();
         Assertions.assertEquals(priceOnGeneralPage, priceOnPrivatePage);
+    }
+    @Test
+    public void testChoosingInServices() {
+        driver.findElement(By.xpath(OnlinerPage.LINK_SERVICES)).click();
+        WebElement servicesFirstItem = driver.findElement(By.xpath(OnlinerPage.SERVICES_PRICE_FIRST_ITEM));
+        String firstServicesItem = servicesFirstItem.getText();
+        servicesFirstItem.click();
+        WebElement servicesFirstItemExact = driver.findElement(By.xpath(OnlinerPage.SERVICES_PRICE_EXACT));
+        String firstServicesItemExact = servicesFirstItemExact.getText();
+        Assertions.assertEquals(firstServicesItem,firstServicesItemExact);
     }
 
     @AfterEach
