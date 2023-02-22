@@ -1,6 +1,5 @@
 package by.itacademy.onliner;
 
-import dev.failsafe.internal.util.Assert;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -12,6 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
+import java.util.Arrays;
 import java.util.List;
 
 public class OnlinerTest {
@@ -211,6 +211,28 @@ public class OnlinerTest {
         WebElement servicesFirstItemExact = driver.findElement(By.xpath(OnlinerPage.SERVICES_PRICE_EXACT));
         String firstServicesItemExact = servicesFirstItemExact.getText();
         Assertions.assertEquals(firstServicesItem,firstServicesItemExact);
+    }
+
+    @Test
+    public void testHeaderSectionsInTheMainPage(){
+        String[] expectedSectionsOfTheMainPage = {"Каталог", "Новости", "Автобарахолка", "Дома и квартиры", "Услуги", "Барахолка", "Форум"};
+        String[] actualSectionsOfTheMainPage = {
+                (driver.findElement(By.xpath(OnlinerPage.LINK_CATALOG)).getText()),
+                (driver.findElement(By.xpath(OnlinerPage.LINK_NEWS)).getText()),
+                (driver.findElement(By.xpath(OnlinerPage.LINK_CAR_MARKET)).getText()),
+                (driver.findElement(By.xpath(OnlinerPage.LINK_HOUSES_AND_APARTMENTS)).getText()),
+                (driver.findElement(By.xpath(OnlinerPage.LINK_SERVICES)).getText()),
+                (driver.findElement(By.xpath(OnlinerPage.LINK_FLEA_MARKET)).getText()),
+                (driver.findElement(By.xpath(OnlinerPage.LINK_FORUM)).getText())
+        };
+        int numberOfSections = 0;
+        for (int i = 0; i < actualSectionsOfTheMainPage.length; i++){
+            if (actualSectionsOfTheMainPage[i] != null){
+                numberOfSections++;
+            }
+        }
+        Assertions.assertEquals(7, numberOfSections);
+        Assertions.assertTrue(Arrays.equals(expectedSectionsOfTheMainPage, actualSectionsOfTheMainPage));
     }
 
     @AfterEach
