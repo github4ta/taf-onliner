@@ -30,7 +30,7 @@ public class OnlinerPage {
     public static final String LABEL_AUTO_FLEA_MARKET = "//h1[@class='vehicle-form__title vehicle-form__title_big-alter']";
 
     public static final String LABEL_AUTO_FLEA_MARKET = "//*[@id=\"container\"]/div/div/header/div[2]/div/nav/ul[1]/li[3]/a/span";
-    public static final String TXT_AUTO_FLEA_MARKET = "//*[@id=\"list\"]/div[2]/div/a[1]/div/div/div[3]/div/div[2]/div";
+    public static final String TXT_AUTO_FLEA_MARKET = "//*[@id=\"list\"]/div[2]/div/a[1]/div/div/div[3]/div/div[2]/div/div[1]";
     public static final String FIRST_AUTO_FLEA_MARKET = "//*[@id=\"list\"]/div[2]/div/a[1]/div/div/div[1]/div/div[1]/div[1]/div[2]";
     public static final String VEHICLE = "//*[@id=\"container\"]/div/div/div/div/div/div[2]/div/div/div[1]/div/div[4]/div[1]/h1";
 
