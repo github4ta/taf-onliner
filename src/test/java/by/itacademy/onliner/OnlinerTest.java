@@ -1,5 +1,6 @@
 package by.itacademy.onliner;
 
+import dev.failsafe.internal.util.Assert;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -10,6 +11,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.time.Duration;
 import java.util.List;
 
@@ -190,6 +192,24 @@ public class OnlinerTest {
         Util.waitForPresenceElementByXPath(driver, OnlinerPage.RENT_APPART_PRICE_EXACT, 10000);
         String priceOnPrivatePage = driver.findElement(By.xpath(OnlinerPage.RENT_APPART_PRICE_EXACT)).getText();
         Assertions.assertEquals(priceOnGeneralPage, priceOnPrivatePage);
+    }
+
+    @Test
+    public void testTVinCart() {
+        driver.findElement(By.xpath(OnlinerPage.LINK_CATALOG)).click();
+        driver.findElement(By.xpath(OnlinerPage.BUTTON_ELECTRONICS)).click();
+        driver.findElement(By.xpath(OnlinerPage.LABEL_TV_AND_VIDEO)).click();
+        driver.findElement(By.xpath(OnlinerPage.BUTTON_TV)).click();
+        Util.waitForPresenceElementByXPath(driver, OnlinerPage.BTN_TV_OFFERS, 6000);
+        System.out.println(driver.findElements(By.xpath(OnlinerPage.BTN_TV_OFFERS)).get(4).getText());
+        driver.findElements(By.xpath(OnlinerPage.BTN_TV_OFFERS)).get(4).click();
+
+        Util.waitFor(3);
+        driver.findElements(By.xpath(OnlinerPage.TV_IN_CART_BTN)).get(1).click();
+        Util.waitFor(3);
+        WebElement btnElement = driver.findElement(By.xpath(OnlinerPage.TITLE_TV_IN_CART));
+        String text = btnElement.getText();
+        Assertions.assertEquals("Телевизор Xiaomi MI TV P1 50\" (международная версия)", text);
     }
 
     @AfterEach
