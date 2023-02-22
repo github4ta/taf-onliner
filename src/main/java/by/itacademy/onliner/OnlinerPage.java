@@ -73,4 +73,9 @@ public class OnlinerPage {
     public static final String RENT_APPART_PRICE_EXACT = "//span[@class='apartment-bar__price apartment-bar__price_primary']";
     public static final String SERVICES_PRICE_EXACT = "//*[@id=\"container\"]/div/div[2]/div/div/div/div/div/div[1]/div/div/div/div[1]/div";
     public static final String SERVICES_PRICE_FIRST_ITEM ="//*[@id=\"service-list\"]/div[2]/div/div/div[3]/search-tasks-list/div/div/div[1]/search-tasks-item/div/div/div[1]/div/a/span[2]/span[1]";
+    public static final String FOOTER_VK_ICON = "//a[@href='https://vk.com/onliner']";
+    public static final String FOOTER_FACEBOOK_ICON = "//a[@href='https://facebook.com/onlinerby']";
+    public static final String FOOTER_TWITTER_ICON = "//a[@href='https://twitter.com/OnlinerBY']";
+    public static final String FOOTER_YOUTUBE_ICON = "//a[@href='https://youtube.com/onlinerby']";
+
 }

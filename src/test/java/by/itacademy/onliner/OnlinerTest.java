@@ -1,6 +1,5 @@
 package by.itacademy.onliner;
 
-import dev.failsafe.internal.util.Assert;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -211,6 +210,13 @@ public class OnlinerTest {
         WebElement servicesFirstItemExact = driver.findElement(By.xpath(OnlinerPage.SERVICES_PRICE_EXACT));
         String firstServicesItemExact = servicesFirstItemExact.getText();
         Assertions.assertEquals(firstServicesItem,firstServicesItemExact);
+    }
+    @Test
+    public  void testSocialLinksIcons(){
+        Assertions.assertTrue(driver.findElement(By.xpath((OnlinerPage.FOOTER_VK_ICON))).isDisplayed());
+        Assertions.assertTrue(driver.findElement(By.xpath(OnlinerPage.FOOTER_FACEBOOK_ICON)).isDisplayed());
+        Assertions.assertTrue(driver.findElement(By.xpath(OnlinerPage.FOOTER_TWITTER_ICON)).isDisplayed());
+        Assertions.assertTrue(driver.findElement(By.xpath(OnlinerPage.FOOTER_YOUTUBE_ICON)).isDisplayed());
     }
 
     @AfterEach
