@@ -27,7 +27,7 @@ public class OnlinerPage {
     public static final String LABEL_LAPTOPS_AND_COMPUTERS_AND_MONITOR = "//div[@class='catalog-navigation-list__aside-title'][text()=' Ноутбуки, компьютеры, мониторы ']";
     public static final String LABEL_LAPTOPS = "//a[@href='https://catalog.onliner.by/notebook']";
     public static final String LABEL_AUTO_FLEA_MARKET = "//*[@id=\"container\"]/div/div/header/div[2]/div/nav/ul[1]/li[3]/a/span";
-    public static final String TXT_AUTO_FLEA_MARKET = "//*[@id=\"list\"]/div[2]/div/a[1]/div/div/div[3]/div/div[2]/div";
+    public static final String TXT_AUTO_FLEA_MARKET = "//*[@id=\"list\"]/div[2]/div/a[1]/div/div/div[3]/div/div[2]/div/div[1]";
     public static final String FIRST_AUTO_FLEA_MARKET = "//*[@id=\"list\"]/div[2]/div/a[1]/div/div/div[1]/div/div[1]/div[1]/div[2]";
     public static final String VEHICLE = "//*[@id=\"container\"]/div/div/div/div/div/div[2]/div/div/div[1]/div/div[4]/div[1]/h1";
 
