@@ -124,6 +124,16 @@ public class OnlinerTest {
         Assertions.assertEquals("Укажите пароль", driver.findElement(By.xpath(OnlinerPage.LABEL_WITHOUT_PASSWORD)).getText());
         Assertions.assertEquals("Укажите ник или e-mail", driver.findElement(By.xpath(OnlinerPage.LABEL_WITHOUT_EMAIL)).getText());
     }
+    
+    @Test
+    public void testLoginFormWithEmptyPassword() {
+        driver.findElement(By.xpath(OnlinerPage.BUTTON_ENTRANCE)).click();
+        WebElement inputLogin = driver.findElement(By.xpath(OnlinerPage.INPUT_LOGIN));
+        inputLogin.sendKeys("Nataliya0405");
+        driver.findElement(By.xpath(OnlinerPage.BTN_ENTER)).click();
+        Util.waitFor(40);
+        Assertions.assertEquals("Укажите пароль", driver.findElement(By.xpath(OnlinerPage.INPUT_PASSWORD)).getText());
+    }
 
     @Test
     public void testAddLaptopInCart() {
