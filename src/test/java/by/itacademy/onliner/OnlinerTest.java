@@ -11,6 +11,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.time.Duration;
 import java.util.List;
 
@@ -202,7 +203,18 @@ public class OnlinerTest {
         String priceOnPrivatePage = driver.findElement(By.xpath(OnlinerPage.RENT_APPART_PRICE_EXACT)).getText();
         Assertions.assertEquals(priceOnGeneralPage, priceOnPrivatePage);
     }
-    
+
+    @Test
+    public void testOpportunitySelectAdsAutobaraholka() {
+        driver.findElement(By.xpath(OnlinerPage.LABEL_AUTO_FLEA_MARKET)).click();
+        String firstTxtAutoFleaMarketElement = driver.findElement(By.xpath(OnlinerPage.TXT_AUTO_FLEA_MARKET)).getText();
+        driver.findElement(By.xpath(OnlinerPage.FIRST_AUTO_FLEA_MARKET)).click();
+        Util.waitForPresenceElementByXPath(driver, OnlinerPage.VEHICLE, 10000);
+        String txtAutoFleaMarketElement = driver.findElement(By.xpath(OnlinerPage.VEHICLE)).getText();
+
+        Assertions.assertEquals(firstTxtAutoFleaMarketElement, txtAutoFleaMarketElement);
+    }
+
     @Test
     public void testAbilitySelectForumTheme(){
         driver.findElement(By.xpath(OnlinerPage.LINK_FORUM)).click();
