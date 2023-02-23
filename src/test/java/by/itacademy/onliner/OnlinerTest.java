@@ -219,7 +219,7 @@ public class OnlinerTest {
 
     @Test
     public void testOpportunitySelectAdsAutobaraholka() {
-        driver.findElement(By.xpath(OnlinerPage.LABEL_AUTO_FLEA_MARKET)).click();
+        driver.findElement(By.xpath(OnlinerPage.LINK_CAR_MARKET)).click();
         String firstTxtAutoFleaMarketElement = driver.findElement(By.xpath(OnlinerPage.TXT_AUTO_FLEA_MARKET)).getText();
         driver.findElement(By.xpath(OnlinerPage.FIRST_AUTO_FLEA_MARKET)).click();
         Util.waitForPresenceElementByXPath(driver, OnlinerPage.VEHICLE, 10000);
