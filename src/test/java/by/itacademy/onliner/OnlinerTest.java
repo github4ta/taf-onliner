@@ -1,6 +1,6 @@
 package by.itacademy.onliner;
 
-import dev.failsafe.internal.util.Assert;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -31,7 +31,6 @@ public class OnlinerTest {
         String actualFooterCoopyright = driver.findElement(By.xpath(OnlinerPage.LABEL_COPYRIGHT)).getText();
         Util.waitFor(1);
         Assertions.assertEquals("© 2001—2023 Onlíner", actualFooterCoopyright);
-
     }
 
     @Test
@@ -85,7 +84,6 @@ public class OnlinerTest {
         driver.findElement(By.xpath(OnlinerPage.LINK_CATALOG)).click();
         WebElement LabelTextCatalog = driver.findElement(By.xpath(OnlinerPage.LABEL_CATALOG));
         Assertions.assertEquals("КаталогВсе суперцены!", LabelTextCatalog.getText());
-
     }
 
     @Test
@@ -224,8 +222,6 @@ public class OnlinerTest {
         driver.findElement(By.xpath(OnlinerPage.FIRST_AUTO_FLEA_MARKET)).click();
         Util.waitForPresenceElementByXPath(driver, OnlinerPage.VEHICLE, 10000);
         String txtAutoFleaMarketElement = driver.findElement(By.xpath(OnlinerPage.VEHICLE)).getText();
-
-
         Assertions.assertEquals(firstTxtAutoFleaMarketElement, txtAutoFleaMarketElement);
     }
 
