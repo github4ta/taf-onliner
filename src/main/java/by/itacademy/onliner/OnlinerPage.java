@@ -20,8 +20,8 @@ public class OnlinerPage {
     public static final String LINK_FOOTER_MANIFESTO = "//a[@href='https://blog.onliner.by/manifest']";
     public static final String LINK_FOOTER_PUBLIC_CONTRACTS = "//a[@href='https://blog.onliner.by/publichnye-dogovory']";
     public static final String LINK_FOOTER_PRIVACY_POLICY = "//a[@href='https://blog.onliner.by/politika-konfidencialnosti']";
-    public static final String LABEL_FOOTER_SUPPORT = "//a[@href='https://blog.onliner.by/politika-konfidencialnosti']";
-    public static final String LABEL_FOOTER_REFUND_POLICY = "//a[@href='https://blog.onliner.by/politika-konfidencialnosti']";
+    public static final String LINK_FOOTER_SUPPORT = "//a[@href='https://blog.onliner.by/politika-konfidencialnosti']";
+    public static final String LINK_FOOTER_REFUND_POLICY = "//a[@href='https://blog.onliner.by/politika-konfidencialnosti']";
 
     public static final String BUTTON_ENTRANCE = "//div[@class='auth-bar__item auth-bar__item--text']";
     public static final String BUTTON_CART = "//a[@class='auth-bar__item auth-bar__item--cart']";

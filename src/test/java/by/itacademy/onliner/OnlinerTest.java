@@ -173,9 +173,9 @@ public class OnlinerTest {
         Assertions.assertEquals("Публичные договоры", footerPublDogovoriElement.getText());
         WebElement footerPolitikaKonfElement = driver.findElement(By.xpath(OnlinerPage.LINK_FOOTER_PRIVACY_POLICY));
         Assertions.assertEquals("Политика конфиденциальности", footerPolitikaKonfElement.getText());
-        WebElement footerPodderzkaPolsovateleiElement = driver.findElement(By.xpath(OnlinerPage.LABEL_FOOTER_SUPPORT));
+        WebElement footerPodderzkaPolsovateleiElement = driver.findElement(By.xpath(OnlinerPage.LINK_FOOTER_SUPPORT));
         Assertions.assertEquals("Поддержка пользователей", footerPodderzkaPolsovateleiElement.getText());
-        WebElement footerPravilaVozvrataElement = driver.findElement(By.xpath(OnlinerPage.LABEL_FOOTER_REFUND_POLICY));
+        WebElement footerPravilaVozvrataElement = driver.findElement(By.xpath(OnlinerPage.LINK_FOOTER_REFUND_POLICY));
         Assertions.assertEquals("Правила возврата", footerPravilaVozvrataElement.getText());
     }
 
