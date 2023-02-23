@@ -43,8 +43,6 @@ public class OnlinerPage {
     public static final String FIRST_AUTO_FLEA_MARKET = "//*[@id=\"list\"]/div[2]/div/a[1]/div/div/div[1]/div/div[1]/div[1]/div[2]";
     public static final String VEHICLE = "//*[@id=\"container\"]/div/div/div/div/div/div[2]/div/div/div[1]/div/div[4]/div[1]/h1";
 
-    public static final String LABEL_AUTO_FLEA_MARKET = "//h1[@class='vehicle-form__title vehicle-form__title_big-alter']";
-
     public static final String LABEL_SALE = "//span[@class='project-navigation__sign'][text()='Продажа']";
     public static final String LABEL_RENT = "//span[@class='project-navigation__sign'][text()='Аренда']";
     public static final String LABEL_ORDERS = "//div[@class='service-header__title service-header__title_huge'][text()='Заказы']";
