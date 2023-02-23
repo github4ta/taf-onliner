@@ -11,6 +11,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.time.Duration;
 import java.util.List;
 
@@ -179,7 +180,9 @@ public class OnlinerTest {
         Assertions.assertEquals("Правила возврата", footerPravilaVozvrataElement.getText());
     }
 
+
     @Test
+
     public void testSelectNews() {
         driver.findElement(By.xpath(OnlinerPage.LINK_NEWS)).click();
         driver.findElement(By.xpath(OnlinerPage.NEWS_MONEY_LINK)).click();
@@ -202,6 +205,7 @@ public class OnlinerTest {
         String priceOnPrivatePage = driver.findElement(By.xpath(OnlinerPage.RENT_APPART_PRICE_EXACT)).getText();
         Assertions.assertEquals(priceOnGeneralPage, priceOnPrivatePage);
     }
+
     @Test
     public void testChoosingInServices() {
         driver.findElement(By.xpath(OnlinerPage.LINK_SERVICES)).click();
@@ -211,6 +215,17 @@ public class OnlinerTest {
         WebElement servicesFirstItemExact = driver.findElement(By.xpath(OnlinerPage.SERVICES_PRICE_EXACT));
         String firstServicesItemExact = servicesFirstItemExact.getText();
         Assertions.assertEquals(firstServicesItem,firstServicesItemExact);
+    }
+
+    @Test
+    public void testOpportunitySelectAdsAutobaraholka() {
+        driver.findElement(By.xpath(OnlinerPage.LABEL_AUTO_FLEA_MARKET)).click();
+        String firstTxtAutoFleaMarketElement = String.format("%s р.", driver.findElement(By.xpath(OnlinerPage.TXT_AUTO_FLEA_MARKET)).getText());
+        driver.findElement(By.xpath(OnlinerPage.FIRST_AUTO_FLEA_MARKET)).click();
+        Util.waitForPresenceElementByXPath(driver, OnlinerPage.VEHICLE, 10000);
+        String txtAutoFleaMarketElement = driver.findElement(By.xpath(OnlinerPage.VEHICLE)).getText();
+
+        Assertions.assertEquals(firstTxtAutoFleaMarketElement, txtAutoFleaMarketElement);
     }
 
     @AfterEach
