@@ -1,6 +1,5 @@
 package by.itacademy.onliner;
 
-import dev.failsafe.internal.util.Assert;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -44,9 +43,9 @@ public class OnlinerTest {
     @Test
     public void openTV() {
         driver.findElement(By.xpath((OnlinerPage.LINK_CATALOG))).click();
-        driver.findElement(By.xpath(OnlinerPage.BUTTON_ELECTRONICS)).click();
+        driver.findElement(By.xpath(OnlinerPage.BUTTON_CATALOG_ELECTRONICS)).click();
         driver.findElement(By.xpath(OnlinerPage.LABEL_TV_AND_VIDEO)).click();
-        driver.findElement(By.xpath(OnlinerPage.BUTTON_TV)).click();
+        driver.findElement(By.xpath(OnlinerPage.CATALOG_NAVIGATION_LIST_ITEM_TV)).click();
         Assertions.assertEquals("Телевизоры", driver.findElement(By.xpath(OnlinerPage.LABEL_TV)).getText());
     }
 
@@ -101,7 +100,7 @@ public class OnlinerTest {
 
     @Test
     public void testOpenOnliner() {
-        By btnLoginBy = By.xpath(OnlinerPage.BUTTON_ENTRANCE);
+        By btnLoginBy = By.xpath(OnlinerPage.BUTTON_LOGIN);
         WebElement btnLoginElement = driver.findElement(btnLoginBy);
         btnLoginElement.click();
         Util.waitFor(2);
@@ -118,8 +117,8 @@ public class OnlinerTest {
 
     @Test
     public void testWithEmptyFields() {
-        driver.findElement(By.xpath(OnlinerPage.BUTTON_ENTRANCE)).click();
-        driver.findElement(By.xpath(OnlinerPage.BUTTON_REGISTRATION_ENTRANCE)).click();
+        driver.findElement(By.xpath(OnlinerPage.BUTTON_LOGIN)).click();
+        driver.findElement(By.xpath(OnlinerPage.BUTTON_SUBMIT_AUTHORIZATION_FORM)).click();
         new WebDriverWait(driver, Duration.ofSeconds(1))
                 .until(ExpectedConditions
                         .visibilityOfElementLocated(By.xpath(OnlinerPage.LABEL_WITHOUT_PASSWORD)));
@@ -129,10 +128,10 @@ public class OnlinerTest {
     
     @Test
     public void testLoginFormWithEmptyPassword() {
-        driver.findElement(By.xpath(OnlinerPage.BUTTON_ENTRANCE)).click();
+        driver.findElement(By.xpath(OnlinerPage.BUTTON_LOGIN)).click();
         WebElement inputLogin = driver.findElement(By.xpath(OnlinerPage.INPUT_LOGIN));
         inputLogin.sendKeys("Nataliya0405");
-        driver.findElement(By.xpath(OnlinerPage.BTN_ENTER)).click();
+        driver.findElement(By.xpath(OnlinerPage.BUTTON_SUBMIT_AUTHORIZATION_FORM)).click();
         Util.waitFor(40);
         Assertions.assertEquals("Укажите пароль", driver.findElement(By.xpath(OnlinerPage.INPUT_PASSWORD)).getText());
     }
@@ -140,7 +139,7 @@ public class OnlinerTest {
     @Test
     public void testAddLaptopInCart() {
         driver.findElement(By.xpath(OnlinerPage.LINK_CATALOG)).click();
-        driver.findElement(By.xpath(OnlinerPage.BUTTON_COMPUTERS_AND_NETWORKS)).click();
+        driver.findElement(By.xpath(OnlinerPage.BUTTON_CATALOG_COMPUTERS_AND_NETWORKS)).click();
         driver.findElement(By.xpath(OnlinerPage.LABEL_LAPTOPS_AND_COMPUTERS_AND_MONITOR)).click();
         driver.findElement(By.xpath(OnlinerPage.LABEL_LAPTOPS)).click();
         List<WebElement> topLaptop = driver.findElements(By.xpath(OnlinerPage.LABEL_ALL_LIST_LAPTOP_ON_PAGE));
