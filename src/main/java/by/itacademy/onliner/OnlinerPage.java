@@ -26,8 +26,6 @@ public class OnlinerPage {
     public static final String BUTTON_TV = "//a[@href='https://catalog.onliner.by/tv']";
     public static final String LABEL_LAPTOPS_AND_COMPUTERS_AND_MONITOR = "//div[@class='catalog-navigation-list__aside-title'][text()=' Ноутбуки, компьютеры, мониторы ']";
     public static final String LABEL_LAPTOPS = "//a[@href='https://catalog.onliner.by/notebook']";
-
-    public static final String LABEL_AUTO_FLEA_MARKET = "//*[@id=\"container\"]/div/div/header/div[2]/div/nav/ul[1]/li[3]/a/span";
     public static final String TXT_AUTO_FLEA_MARKET = "//*[@id=\"list\"]/div[2]/div/a[1]/div/div/div[3]/div/div[2]/div/div[1]";
     public static final String FIRST_AUTO_FLEA_MARKET = "//*[@id=\"list\"]/div[2]/div/a[1]/div/div/div[1]/div/div[1]/div[1]/div[2]";
     public static final String VEHICLE = "//*[@id=\"container\"]/div/div/div/div/div/div[2]/div/div/div[1]/div/div[4]/div[1]/h1";
@@ -57,9 +55,9 @@ public class OnlinerPage {
     public static final String INPUT_PASSWORD = "//*[@id=\"auth-container\"]/div/div[2]/div/form/div[2]/div/div/div[2]/div";
 
 
-    public static final String LABEL_NUMBERS_OF_OFFERS_LAPTOPS = "//div[@class='schema-product__offers']";
+    public static final String LABEL_NUMBERS_OF_OFFERS_LAPTOPS = "//div[@class='schema-product__offers']/a";
     public static final String LABEL_ADD_LAPTOPS_TO_CART = "//div[@class='offers-list__part offers-list__part_action']//a[2]";
-    public static final String LABEL_ALL_LIST_LAPTOP_ON_PAGE = "//div[@class='offers-list__part offers-list__part_action']//a[2]";
+    public static final String LABEL_ALL_LIST_LAPTOP_ON_PAGE = "//a[@class='js-product-title-link']";
 
     public static final String FOOTER_ELEMENTS_CLASS = "footer-style__item";
     public static final String FOOTER_O_KOMPANII = "/html/body/div[4]/footer/div/div/div/div[1]/ul/li[1]/a";
