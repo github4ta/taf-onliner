@@ -11,6 +11,17 @@ public class OnlinerPage {
     public static final String LINK_SERVICES = "//span[@class='b-main-navigation__text'][contains(text(),'Услуги')]";
     public static final String LINK_FLEA_MARKET = "//span[@class='b-main-navigation__text'][contains(text(),'Барахолка')]";
     public static final String LINK_FORUM = "//span[@class='b-main-navigation__text'][contains(text(),'Форум')]";
+    public static final String LINK_FOOTER_USER_AGREEMENT = "//a[@href='https://blog.onliner.by/siterules']";
+    public static final String LINK_FOOTER_ABOUT_COMPANY = "//a[@href='https://blog.onliner.by/about']";
+    public static final String LINK_FOOTER_KONTAKTS_EDITORIAL = "//a[@href='https://people.onliner.by/contacts']";
+    public static final String LINK_FOOTER_ADVERTISING = "//a[@href='https://b2breg.onliner.by/advertising']";
+    public static final String LINK_FOOTER_RATES = "//a[@href='https://docs.google.com/spreadsheets/d/1SGFaTkV_Ru4vI29ml9yvR-dMz9rOl7DVVpKk64w5lqM/edit']";
+    public static final String LINK_FOOTER_VACANCY = "//a[@href='https://blog.onliner.by/vacancy']";
+    public static final String LINK_FOOTER_MANIFESTO = "//a[@href='https://blog.onliner.by/manifest']";
+    public static final String LINK_FOOTER_PUBLIC_CONTRACTS = "//a[@href='https://blog.onliner.by/publichnye-dogovory']";
+    public static final String LINK_FOOTER_PRIVACY_POLICY = "//a[@href='https://blog.onliner.by/politika-konfidencialnosti']";
+    public static final String LABEL_FOOTER_SUPPORT = "//a[@href='https://blog.onliner.by/politika-konfidencialnosti']";
+    public static final String LABEL_FOOTER_REFUND_POLICY = "//a[@href='https://blog.onliner.by/politika-konfidencialnosti']";
 
     public static final String BUTTON_ENTRANCE = "//div[@class='auth-bar__item auth-bar__item--text']";
     public static final String BUTTON_CART = "//a[@class='auth-bar__item auth-bar__item--cart']";
@@ -20,12 +31,14 @@ public class OnlinerPage {
     public static final String BUTTON_REGISTRATION_ENTRANCE = "//button[@class='auth-button auth-button_primary auth-button_middle auth-form__button auth-form__button_width_full']";
 
     public static final String LABEL_COPYRIGHT = "//div[@class='footer-style__copy']";
-    public static final String LABEL_ABOUT_THE_COMPANY = "//a[@href='https://blog.onliner.by/about']";
+
     public static final String LABEL_CATALOG = "//div[@class='catalog-navigation__title']";
     public static final String LABEL_TV_AND_VIDEO = "//div[@class='catalog-navigation-list__aside-title'][contains(text(), 'Телевидение')]";
     public static final String BUTTON_TV = "//a[@href='https://catalog.onliner.by/tv']";
     public static final String LABEL_LAPTOPS_AND_COMPUTERS_AND_MONITOR = "//div[@class='catalog-navigation-list__aside-title'][text()=' Ноутбуки, компьютеры, мониторы ']";
     public static final String LABEL_LAPTOPS = "//a[@href='https://catalog.onliner.by/notebook']";
+
+
     public static final String TXT_AUTO_FLEA_MARKET = "//*[@id=\"list\"]/div[2]/div/a[1]/div/div/div[3]/div/div[2]/div/div[1]";
     public static final String FIRST_AUTO_FLEA_MARKET = "//*[@id=\"list\"]/div[2]/div/a[1]/div/div/div[1]/div/div[1]/div[1]/div[2]";
     public static final String VEHICLE = "//*[@id=\"container\"]/div/div/div/div/div/div[2]/div/div/div[1]/div/div[4]/div[1]/h1";
@@ -60,17 +73,9 @@ public class OnlinerPage {
     public static final String LABEL_ALL_LIST_LAPTOP_ON_PAGE = "//a[@class='js-product-title-link']";
 
     public static final String FOOTER_ELEMENTS_CLASS = "footer-style__item";
-    public static final String FOOTER_O_KOMPANII = "/html/body/div[4]/footer/div/div/div/div[1]/ul/li[1]/a";
-    public static final String FOOTER_KONTAKTY_RED = "/html/body/div[4]/footer/div/div/div/div[1]/ul/li[2]/a";
-    public static final String FOOTER_REKLAMA = "/html/body/div[4]/footer/div/div/div/div[1]/ul/li[3]/a";
-    public static final String FOOTER_TARIFY = "/html/body/div[4]/footer/div/div/div/div[1]/ul/li[4]/a";
-    public static final String FOOTER_VAKANSII = "/html/body/div[4]/footer/div/div/div/div[1]/ul/li[5]/a";
-    public static final String FOOTER_MANIFEST = "/html/body/div[4]/footer/div/div/div/div[1]/ul/li[6]/a";
-    public static final String FOOTER_POLSOVAT_SOGLASHENIE = "/html/body/div[4]/footer/div/div/div/div[1]/ul/li[7]/a";
-    public static final String FOOTER_PUBL_DOGOVORI = "/html/body/div[4]/footer/div/div/div/div[1]/ul/li[8]/a";
-    public static final String FOOTER_POLITIKA_KONF = "/html/body/div[4]/footer/div/div/div/div[1]/ul/li[9]/a";
-    public static final String FOOTER_PODDERZKA_POLSOVATELEI = "/html/body/div[4]/footer/div/div/div/div[1]/ul/li[10]/a";
-    public static final String FOOTER_PRAVILA_VOZVRATA = "/html/body/div[4]/footer/div/div/div/div[1]/ul/li[11]/a";
+
+
+
     public static final String NEWS_MONEY_LINK = "//h2/a[contains(text(),'Кошелек')]";
     public static final String FIRST_TITLE = "//a[@class='news-tidings__link']/span[contains(text(),'Этот белорусский продукт')][1]";
     public static final String FIRST_BLOCK_OF_NEWS = "//*[@id='container']//div[@data-post-date='1676985631']";
