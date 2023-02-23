@@ -52,6 +52,7 @@ public class OnlinerPage {
     public static final String INPUT_LOGIN = "//*[@id='auth-container']/div/div[2]/div/form/div[1]/div/div[2]/div/div/div/div/input";
 
     public static final String BTN_ENTER = "//*[@id='auth-container']/div/div[2]/div/form/div[3]/button";
+    //The following line with INPUT_PASSWORD locator has the same xpath as LABEL_ERR_NO_PASSWORD. Should be removed and the code should be refactored
     public static final String INPUT_PASSWORD = "//*[@id=\"auth-container\"]/div/div[2]/div/form/div[2]/div/div/div[2]/div";
 
 
