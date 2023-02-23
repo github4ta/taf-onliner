@@ -201,15 +201,14 @@ public class OnlinerTest {
         driver.findElement(By.xpath(OnlinerPage.LABEL_TV_AND_VIDEO)).click();
         driver.findElement(By.xpath(OnlinerPage.BUTTON_TV)).click();
         Util.waitForPresenceElementByXPath(driver, OnlinerPage.BTN_TV_OFFERS, 6000);
-        System.out.println(driver.findElements(By.xpath(OnlinerPage.BTN_TV_OFFERS)).get(4).getText());
-        driver.findElements(By.xpath(OnlinerPage.BTN_TV_OFFERS)).get(4).click();
-
-        Util.waitFor(3);
+        String titleOnMainPage = driver.findElement(By.xpath(OnlinerPage.FIRST_TV_TITLE)).getText();
+        driver.findElement(By.xpath(OnlinerPage.BTN_TV_OFFERS)).click();
+        Util.waitForPresenceElementByXPath(driver, OnlinerPage.TV_IN_CART_BTN,3000);
         driver.findElements(By.xpath(OnlinerPage.TV_IN_CART_BTN)).get(1).click();
-        Util.waitFor(3);
+        Util.waitForPresenceElementByXPath(driver, OnlinerPage.TITLE_TV_IN_CART,3000);
         WebElement btnElement = driver.findElement(By.xpath(OnlinerPage.TITLE_TV_IN_CART));
-        String text = btnElement.getText();
-        Assertions.assertEquals("Телевизор Xiaomi MI TV P1 50\" (международная версия)", text);
+        String titleOnCart = btnElement.getText();
+        Assertions.assertEquals(titleOnMainPage, titleOnCart);
     }
 
     @AfterEach
