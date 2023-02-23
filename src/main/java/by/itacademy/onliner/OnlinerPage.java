@@ -65,9 +65,9 @@ public class OnlinerPage {
     public static final String RENT_APPART_PRICE_FIRST_ITEM = "//span[@data-bind=\"text: SearchApartments.formatPrice(apartment.price, 'BYN')\"]";
     public static final String RENT_APPART_PRICE_EXACT = "//span[@class='apartment-bar__price apartment-bar__price_primary']";
     public static final String BTN_TV_OFFERS = "//a[@class='schema-product__button button button_orange js-product-price-link']";
-    public static final String TV_IN_CART_BTN = "//a[@class='button-style button-style_base-alter offers-list__button offers-list__button_cart button-style_expletive']";
+    public static final String TV_IN_CART_BTN = "//a[@class='button-style button-style_base-alter offers-list__button offers-list__button_cart button-style_expletive'][contains(text(), 'В корзину')]";
+    public static final String FIRST_TV_TITLE = "//span[@data-bind='html: product.extended_name || product.full_name']";
     public static final String TITLE_TV_IN_CART = "//*[@id='container']/div/div/div/div/div[2]/div[1]/main/div/div/div[2]/div[1]/div/div[3]/div/div[4]/div[1]/div/div[2]/div[2]/div[2]/div/div[2]/div/div[2]/div";
-
 
 
 }
