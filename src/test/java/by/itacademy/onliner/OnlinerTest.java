@@ -1,5 +1,6 @@
 package by.itacademy.onliner;
 
+import dev.failsafe.internal.util.Assert;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -8,11 +9,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 
 public class OnlinerTest {
 
@@ -125,6 +126,31 @@ public class OnlinerTest {
         Assertions.assertEquals("Укажите пароль", driver.findElement(By.xpath(OnlinerPage.LABEL_WITHOUT_PASSWORD)).getText());
         Assertions.assertEquals("Укажите ник или e-mail", driver.findElement(By.xpath(OnlinerPage.LABEL_WITHOUT_EMAIL)).getText());
     }
+    
+    @Test
+    public void testLoginFormWithEmptyPassword() {
+        driver.findElement(By.xpath(OnlinerPage.BUTTON_ENTRANCE)).click();
+        WebElement inputLogin = driver.findElement(By.xpath(OnlinerPage.INPUT_LOGIN));
+        inputLogin.sendKeys("Nataliya0405");
+        driver.findElement(By.xpath(OnlinerPage.BTN_ENTER)).click();
+        Util.waitFor(40);
+        Assertions.assertEquals("Укажите пароль", driver.findElement(By.xpath(OnlinerPage.INPUT_PASSWORD)).getText());
+    }
+
+    @Test
+    public void testAddLaptopInCart() {
+        driver.findElement(By.xpath(OnlinerPage.LINK_CATALOG)).click();
+        driver.findElement(By.xpath(OnlinerPage.BUTTON_COMPUTERS_AND_NETWORKS)).click();
+        driver.findElement(By.xpath(OnlinerPage.LABEL_LAPTOPS_AND_COMPUTERS_AND_MONITOR)).click();
+        driver.findElement(By.xpath(OnlinerPage.LABEL_LAPTOPS)).click();
+        List<WebElement> topLaptop = driver.findElements(By.xpath(OnlinerPage.LABEL_ALL_LIST_LAPTOP_ON_PAGE));
+        String laptopNumberOne = topLaptop.get(0).getText();
+        driver.findElement(By.xpath(OnlinerPage.LABEL_NUMBERS_OF_OFFERS_LAPTOPS)).click();
+        driver.findElement(By.xpath(OnlinerPage.LABEL_ADD_LAPTOPS_TO_CART)).click();
+        Util.waitFor(2);
+        String actual = driver.findElement(By.xpath("//div[@class='product-recommended__title']/div")).getText();
+        Assertions.assertEquals(laptopNumberOne, actual);
+    }
 
     @Test
     public void testFooterElements() {
@@ -154,6 +180,7 @@ public class OnlinerTest {
         Assertions.assertEquals("Правила возврата", footerPravilaVozvrataElement.getText());
     }
 
+    @Test
     public void testSelectNews() {
         driver.findElement(By.xpath(OnlinerPage.LINK_NEWS)).click();
         driver.findElement(By.xpath(OnlinerPage.NEWS_MONEY_LINK)).click();
@@ -164,6 +191,7 @@ public class OnlinerTest {
         Assertions.assertEquals(firstNews, driver.findElement(By.xpath(OnlinerPage.ARTICLE_TITLE)).getText());
     }
 
+    @Test
     public void testAbilitySelectAdvertInHouses() {
         driver.findElement(By.xpath(OnlinerPage.LINK_HOUSES_AND_APARTMENTS)).click();
         driver.findElement(By.xpath(OnlinerPage.LABEL_RENT)).click();
@@ -184,10 +212,31 @@ public class OnlinerTest {
         Util.waitForPresenceElementByXPath(driver, OnlinerPage.VEHICLE, 10000);
         String txtAutoFleaMarketElement = driver.findElement(By.xpath(OnlinerPage.VEHICLE)).getText();
 
-
         Assertions.assertEquals(firstTxtAutoFleaMarketElement, txtAutoFleaMarketElement);
     }
 
+    @Test
+    public void testAbilitySelectForumTheme(){
+        driver.findElement(By.xpath(OnlinerPage.LINK_FORUM)).click();
+        driver.findElement(By.xpath(OnlinerPage.LABEL_FORUM)).click();
+        Util.waitFor(2);
+        List<WebElement> forumThemes = driver.findElements(By.xpath(OnlinerPage.LIST_OF_FORUM_THEMES));
+        String firstForumTheme = forumThemes.get(0).getText();
+        Util.waitFor(2);
+        driver.findElements(By.xpath(OnlinerPage.LIST_OF_FORUM_THEMES)).get(0).click();
+        Assertions.assertEquals(firstForumTheme, driver.findElement(By.xpath(OnlinerPage.TITLE_FIRST_FORUM_THEME)).getText());
+    }
+
+    @Test
+    public void testChoosingInServices() {
+        driver.findElement(By.xpath(OnlinerPage.LINK_SERVICES)).click();
+        WebElement servicesFirstItem = driver.findElement(By.xpath(OnlinerPage.SERVICES_PRICE_FIRST_ITEM));
+        String firstServicesItem = servicesFirstItem.getText();
+        servicesFirstItem.click();
+        WebElement servicesFirstItemExact = driver.findElement(By.xpath(OnlinerPage.SERVICES_PRICE_EXACT));
+        String firstServicesItemExact = servicesFirstItemExact.getText();
+        Assertions.assertEquals(firstServicesItem,firstServicesItemExact);
+    }
 
     @AfterEach
     public void tearDown() {
