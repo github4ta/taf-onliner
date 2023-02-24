@@ -253,6 +253,20 @@ public class OnlinerTest {
         String firstServicesItemExact = servicesFirstItemExact.getText();
         Assertions.assertEquals(firstServicesItem,firstServicesItemExact);
     }
+    @Test
+    public void testEmptyLoginAndСompletedPassword(){
+        WebElement clickBtnEnter = driver.findElement(By.xpath(OnlinerPage.CLICK_BTN_ENTER));
+        clickBtnEnter.click();
+        WebElement clickFieldPassword = driver.findElement(By.xpath(OnlinerPage.ClICK_FIELD_PASSWORD));
+        clickFieldPassword.click();
+        clickFieldPassword.sendKeys("kol63zei");
+        WebElement clickBtnEnterLoginPage = driver.findElement(By.xpath(OnlinerPage.CLICK_BTN_ENTER_LOGIN_PAGE));
+        clickBtnEnterLoginPage.click();
+        Util.waitFor(1);
+        WebElement checkLabelLogoPage = driver.findElement(By.xpath(OnlinerPage.CHECK_TEXT_LOGIN));
+        Assertions.assertEquals("Укажите ник или e-mail", checkLabelLogoPage.getText());
+
+    }
     @AfterEach
     public void tearDown() {
         driver.quit();
