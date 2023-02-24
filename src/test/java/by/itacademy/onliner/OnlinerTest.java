@@ -1,6 +1,5 @@
 package by.itacademy.onliner;
 
-import dev.failsafe.internal.util.Assert;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -154,28 +153,28 @@ public class OnlinerTest {
     public void testFooterElements() {
         int count = driver.findElements(By.className(OnlinerPage.FOOTER_ELEMENTS_CLASS)).size();
         System.out.println(count);
-        WebElement footerOKompaniiElement = driver.findElement(By.xpath(OnlinerPage.FOOTER_O_KOMPANII));
-        Assertions.assertEquals("О компании", footerOKompaniiElement.getText());
-        WebElement footerKontaktyRedElement = driver.findElement(By.xpath(OnlinerPage.FOOTER_KONTAKTY_RED));
-        Assertions.assertEquals("Контакты редакции", footerKontaktyRedElement.getText());
-        WebElement footerReklamaElement = driver.findElement(By.xpath(OnlinerPage.FOOTER_REKLAMA));
-        Assertions.assertEquals("Реклама", footerReklamaElement.getText());
-        WebElement footerTarifyElement = driver.findElement(By.xpath(OnlinerPage.FOOTER_TARIFY));
-        Assertions.assertEquals("Тарифы", footerTarifyElement.getText());
-        WebElement footerVakansiiElement = driver.findElement(By.xpath(OnlinerPage.FOOTER_VAKANSII));
-        Assertions.assertEquals("Вакансии", footerVakansiiElement.getText());
+        WebElement footerAboutCompanyElement = driver.findElement(By.xpath(OnlinerPage.FOOTER_ABOUT_COMPANY));
+        Assertions.assertEquals("О компании", footerAboutCompanyElement.getText());
+        WebElement footerEditContactElement = driver.findElement(By.xpath(OnlinerPage.FOOTER_EDITORIAL_CONTACTS));
+        Assertions.assertEquals("Контакты редакции", footerEditContactElement.getText());
+        WebElement footerAdvertElement = driver.findElement(By.xpath(OnlinerPage.FOOTER_ADVERTISING));
+        Assertions.assertEquals("Реклама", footerAdvertElement.getText());
+        WebElement footerTariffElement = driver.findElement(By.xpath(OnlinerPage.FOOTER_TARIFF));
+        Assertions.assertEquals("Тарифы", footerTariffElement.getText());
+        WebElement footerVacanciesElement = driver.findElement(By.xpath(OnlinerPage.FOOTER_VACANCIES));
+        Assertions.assertEquals("Вакансии", footerVacanciesElement.getText());
         WebElement footerManifestElement = driver.findElement(By.xpath(OnlinerPage.FOOTER_MANIFEST));
         Assertions.assertEquals("Манифест", footerManifestElement.getText());
-        WebElement footerPolsovatSoglashenieElement = driver.findElement(By.xpath(OnlinerPage.FOOTER_POLSOVAT_SOGLASHENIE));
-        Assertions.assertEquals("Пользовательское соглашение", footerPolsovatSoglashenieElement.getText());
-        WebElement footerPublDogovoriElement = driver.findElement(By.xpath(OnlinerPage.FOOTER_PUBL_DOGOVORI));
-        Assertions.assertEquals("Публичные договоры", footerPublDogovoriElement.getText());
-        WebElement footerPolitikaKonfElement = driver.findElement(By.xpath(OnlinerPage.FOOTER_POLITIKA_KONF));
-        Assertions.assertEquals("Политика конфиденциальности", footerPolitikaKonfElement.getText());
-        WebElement footerPodderzkaPolsovateleiElement = driver.findElement(By.xpath(OnlinerPage.FOOTER_PODDERZKA_POLSOVATELEI));
-        Assertions.assertEquals("Поддержка пользователей", footerPodderzkaPolsovateleiElement.getText());
-        WebElement footerPravilaVozvrataElement = driver.findElement(By.xpath(OnlinerPage.FOOTER_PRAVILA_VOZVRATA));
-        Assertions.assertEquals("Правила возврата", footerPravilaVozvrataElement.getText());
+        WebElement footerTermsElement = driver.findElement(By.xpath(OnlinerPage.FOOTER_TERMS_OF_USE));
+        Assertions.assertEquals("Пользовательское соглашение", footerTermsElement.getText());
+        WebElement footerPublicAgreementElement = driver.findElement(By.xpath(OnlinerPage.FOOTER_PUBLIC_AGREEMENT));
+        Assertions.assertEquals("Публичные договоры", footerPublicAgreementElement.getText());
+        WebElement footerPrivacyElement = driver.findElement(By.xpath(OnlinerPage.FOOTER_PRIVACY_POLICY));
+        Assertions.assertEquals("Политика конфиденциальности", footerPrivacyElement.getText());
+        WebElement footerSupportElement = driver.findElement(By.xpath(OnlinerPage.FOOTER_USER_SUPPORT));
+        Assertions.assertEquals("Поддержка пользователей", footerSupportElement.getText());
+        WebElement footerReturnPolicyElement = driver.findElement(By.xpath(OnlinerPage.FOOTER_RETURN_POLICY));
+        Assertions.assertEquals("Правила возврата", footerReturnPolicyElement.getText());
     }
 
 
