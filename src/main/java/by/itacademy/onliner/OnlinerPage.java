@@ -50,7 +50,7 @@ public class OnlinerPage {
     public static final String LABEL_TV_TITLE = "//h1[@class='schema-header__title js-schema-header_title'][contains(text(), 'Телевизоры')]";
     public static final String LABEL_ABOUT_COMPANY_TITLE = "//*[@id=\"container\"]/div/div[2]/div/div/div[3]/div[1]/div/div/div[1]/div/div[1]/div";
     public static final String aboutCompany = "О сайте";
-    public static final String LABEL_ENTER_TITLE = "/html/body/div[6]/div/div/div/div/div/div/div/div[2]/div/div[1]";
+    public static final String LABEL_ENTER_TITLE = "//button[@type='submit'][contains(text(), 'Войти')]";
     public static final String LABEL_ERR_NO_PASSWORD = "//*[@id=\"auth-container\"]/div/div[2]/div/form/div[2]/div/div/div[2]/div";
     public static final String LABEL_ERR_NO_EMAIL = "//*[@id=\"auth-container\"]/div/div[2]/div/form/div[1]/div/div[2]/div/div/div[2]/div";
     public static final String INPUT_LOGIN = "//*[@id='auth-container']/div/div[2]/div/form/div[1]/div/div[2]/div/div/div/div/input";
