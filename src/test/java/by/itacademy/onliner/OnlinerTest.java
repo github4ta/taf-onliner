@@ -1,5 +1,6 @@
 package by.itacademy.onliner;
 
+import dev.failsafe.internal.util.Assert;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -202,8 +203,22 @@ public class OnlinerTest {
         String priceOnPrivatePage = driver.findElement(By.xpath(OnlinerPage.LABEL_RENT_APARTMENT_PRICE_EXACT)).getText();
         Assertions.assertEquals(priceOnGeneralPage, priceOnPrivatePage);
     }
-
     @Test
+    public void testTVinCart() {
+        driver.findElement(By.xpath(OnlinerPage.LINK_CATALOG)).click();
+        driver.findElement(By.xpath(OnlinerPage.BUTTON_ELECTRONICS)).click();
+        driver.findElement(By.xpath(OnlinerPage.LABEL_TV_AND_VIDEO)).click();
+        driver.findElement(By.xpath(OnlinerPage.BUTTON_TV)).click();
+        Util.waitForPresenceElementByXPath(driver, OnlinerPage.BUTTON_TV_OFFERS, 6000);
+        String titleOnMainPage = driver.findElement(By.xpath(OnlinerPage.FIRST_TV_TITLE)).getText();
+        driver.findElement(By.xpath(OnlinerPage.BUTTON_TV_OFFERS)).click();
+        Util.waitForPresenceElementByXPath(driver, OnlinerPage.TV_IN_CART_BUTTON,3000);
+        driver.findElements(By.xpath(OnlinerPage.TV_IN_CART_BUTTON)).get(1).click();
+        Util.waitForPresenceElementByXPath(driver, OnlinerPage.TITLE_TV_IN_CART,3000);
+        WebElement btnElement = driver.findElement(By.xpath(OnlinerPage.TITLE_TV_IN_CART));
+        String titleOnCart = btnElement.getText();
+        Assertions.assertEquals(titleOnMainPage, titleOnCart);
+    }
     public void testChoosingInServices() {
         driver.findElement(By.xpath(OnlinerPage.LINK_SERVICES)).click();
         WebElement servicesFirstItem = driver.findElement(By.xpath(OnlinerPage.SERVICES_PRICE_FIRST_ITEM));
@@ -213,7 +228,6 @@ public class OnlinerTest {
         String firstServicesItemExact = servicesFirstItemExact.getText();
         Assertions.assertEquals(firstServicesItem,firstServicesItemExact);
     }
-
     @Test
     public void testOpportunitySelectAdsAutobaraholka() {
         driver.findElement(By.xpath(OnlinerPage.LABEL_AUTO_FLEA_MARKET_TITLE)).click();
@@ -247,7 +261,6 @@ public class OnlinerTest {
         String firstServicesItemExact = servicesFirstItemExact.getText();
         Assertions.assertEquals(firstServicesItem,firstServicesItemExact);
     }
-
     @AfterEach
     public void tearDown() {
         driver.quit();

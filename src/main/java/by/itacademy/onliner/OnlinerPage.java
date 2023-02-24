@@ -53,9 +53,7 @@ public class OnlinerPage {
     public static final String LABEL_ENTER_TITLE = "/html/body/div[6]/div/div/div/div/div/div/div/div[2]/div/div[1]";
     public static final String LABEL_ERR_NO_PASSWORD = "//*[@id=\"auth-container\"]/div/div[2]/div/form/div[2]/div/div/div[2]/div";
     public static final String LABEL_ERR_NO_EMAIL = "//*[@id=\"auth-container\"]/div/div[2]/div/form/div[1]/div/div[2]/div/div/div[2]/div";
-
     public static final String INPUT_LOGIN = "//*[@id='auth-container']/div/div[2]/div/form/div[1]/div/div[2]/div/div/div/div/input";
-   
     //The following line with INPUT_PASSWORD locator has the same xpath as LABEL_ERR_NO_PASSWORD. Should be removed and the code should be refactored
     public static final String INPUT_PASSWORD = "//*[@id=\"auth-container\"]/div/div[2]/div/form/div[2]/div/div/div[2]/div";
     public static final String BUTTON_NUMBERS_OF_OFFERS_LAPTOPS = "//div[@class='schema-product__offers']/a";
@@ -76,14 +74,18 @@ public class OnlinerPage {
     public static final String NEWS_MONEY_LINK = "//h2/a[contains(text(),'Кошелек')]";
     public static final String FIRST_TITLE = "//a[@class='news-tidings__link']/span[contains(text(),'Этот белорусский продукт')][1]";
     public static final String FIRST_BLOCK_OF_NEWS = "//*[@id='container']//div[@data-post-date='1676985631']";
-
+    public static final String ARTICLE_TITLE = "//*[@id='container']//h1";
+    public static final String RENT_APPART_PRICE_FIRST_ITEM = "//span[@data-bind=\"text: SearchApartments.formatPrice(apartment.price, 'BYN')\"]";
+    public static final String RENT_APPART_PRICE_EXACT = "//span[@class='apartment-bar__price apartment-bar__price_primary']";
+    public static final String BUTTON_TV_OFFERS = "//a[@class='schema-product__button button button_orange js-product-price-link']";
+    public static final String TV_IN_CART_BUTTON = "//a[@class='button-style button-style_base-alter offers-list__button offers-list__button_cart button-style_expletive'][contains(text(), 'В корзину')]";
+    public static final String FIRST_TV_TITLE = "//span[@data-bind='html: product.extended_name || product.full_name']";
+    public static final String TITLE_TV_IN_CART = "//div[@class='product-recommended__title']";
     public static final String LABEL_ARTICLE_TITLE = "//*[@id='container']//h1";
     public static final String LABEL_RENT_APARTMENT_ALL_PRICES = "//span[@data-bind=\"text: SearchApartments.formatPrice(apartment.price, 'BYN')\"]";
     public static final String LABEL_RENT_APARTMENT_PRICE_EXACT = "//span[@class='apartment-bar__price apartment-bar__price_primary']";
-
     public static final String LABEL_SERVICE_ITEM_TITLE = "//*[@id=\"container\"]/div/div[2]/div/div/div/div/div/div[1]/div/div/div/div[1]/div";
     public static final String SERVICES_PRICE_FIRST_ITEM ="//*[@id=\"service-list\"]/div[2]/div/div/div[3]/search-tasks-list/div/div/div[1]/search-tasks-item/div/div/div[1]/div/a/span[2]/span[1]";
-
     public static final String LIST_OF_FORUM_THEMES = "//ul[@class = 'b-list-topics']//li//h3";
     public static final String LABEL_TITLE_FIRST_FORUM_THEME = "//div[@class = 'b-mnforum-header']//h1//a";
 }
