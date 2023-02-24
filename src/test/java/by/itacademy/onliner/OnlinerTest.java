@@ -123,7 +123,7 @@ public class OnlinerTest {
         Assertions.assertEquals("Укажите пароль", driver.findElement(By.xpath(OnlinerPage.LABEL_ERR_NO_PASSWORD)).getText());
         Assertions.assertEquals("Укажите ник или e-mail", driver.findElement(By.xpath(OnlinerPage.LABEL_ERR_NO_EMAIL)).getText());
     }
-    
+
     @Test
     public void testLoginFormWithEmptyPassword() {
         driver.findElement(By.xpath(OnlinerPage.BUTTON_LOGIN)).click();
@@ -137,7 +137,7 @@ public class OnlinerTest {
     @Test
     public void testAddLaptopInCart() {
         driver.findElement(By.xpath(OnlinerPage.LINK_CATALOG)).click();
-        driver.findElement(By.xpath(OnlinerPage.BUTTON_CATALOG_COMPUTERS_AND_NETWORKS)).click(); 
+        driver.findElement(By.xpath(OnlinerPage.BUTTON_CATALOG_COMPUTERS_AND_NETWORKS)).click();
         driver.findElement(By.xpath(OnlinerPage.LABEL_LAPTOPS_COMPUTERS_AND_MONITOR)).click();
         driver.findElement(By.xpath(OnlinerPage.LINK_LAPTOPS)).click();
         List<WebElement> topLaptop = driver.findElements(By.xpath(OnlinerPage.LINK_ALL_LIST_LAPTOP_ON_PAGE));
@@ -202,19 +202,17 @@ public class OnlinerTest {
         String priceOnPrivatePage = driver.findElement(By.xpath(OnlinerPage.LABEL_RENT_APARTMENT_PRICE_EXACT)).getText();
         Assertions.assertEquals(priceOnGeneralPage, priceOnPrivatePage);
     }
+
     @Test
     public void testTVinCart() {
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.findElement(By.xpath(OnlinerPage.LINK_CATALOG)).click();
         driver.findElement(By.xpath(OnlinerPage.BUTTON_CATALOG_ELECTRONICS)).click();
         driver.findElement(By.xpath(OnlinerPage.LABEL_TV_AND_VIDEO)).click();
         driver.findElement(By.xpath(OnlinerPage.CATALOG_NAVIGATION_LIST_ITEM_TV)).click();
-        Util.waitForPresenceElementByXPath(driver, OnlinerPage.BUTTON_TV_OFFERS, 6000);
         String titleOnMainPage = driver.findElement(By.xpath(OnlinerPage.FIRST_TV_TITLE)).getText();
         driver.findElement(By.xpath(OnlinerPage.BUTTON_TV_OFFERS)).click();
-        Util.waitForPresenceElementByXPath(driver, OnlinerPage.TV_IN_CART_BUTTON,3000);
         driver.findElements(By.xpath(OnlinerPage.TV_IN_CART_BUTTON)).get(1).click();
-        Util.waitForPresenceElementByXPath(driver, OnlinerPage.TITLE_TV_IN_CART,3000);
         WebElement btnElement = driver.findElement(By.xpath(OnlinerPage.TITLE_TV_IN_CART));
         String titleOnCart = btnElement.getText();
         Assertions.assertEquals(titleOnMainPage, titleOnCart);
@@ -232,7 +230,7 @@ public class OnlinerTest {
     }
 
     @Test
-    public void testAbilitySelectForumTheme(){
+    public void testAbilitySelectForumTheme() {
         driver.findElement(By.xpath(OnlinerPage.LINK_FORUM)).click();
         driver.findElement(By.xpath(OnlinerPage.LABEL_FORUM_TITLE)).click();
         Util.waitFor(2);
@@ -251,8 +249,9 @@ public class OnlinerTest {
         servicesFirstItem.click();
         WebElement servicesFirstItemExact = driver.findElement(By.xpath(OnlinerPage.LABEL_SERVICE_ITEM_TITLE));
         String firstServicesItemExact = servicesFirstItemExact.getText();
-        Assertions.assertEquals(firstServicesItem,firstServicesItemExact);
+        Assertions.assertEquals(firstServicesItem, firstServicesItemExact);
     }
+
     @AfterEach
     public void tearDown() {
         driver.quit();
