@@ -98,10 +98,11 @@ public class OnlinerTest {
 
     @Test
     public void testOpenOnliner() {
+        Util.waitFor(3);
         By btnLoginBy = By.xpath(OnlinerPage.BUTTON_LOGIN);
         WebElement btnLoginElement = driver.findElement(btnLoginBy);
         btnLoginElement.click();
-        Util.waitFor(2);
+        Util.waitForPresenceElementByXPath(driver, OnlinerPage.LABEL_ENTER_TITLE, 3000);
         WebElement loginText = driver.findElement(By.xpath(OnlinerPage.LABEL_ENTER_TITLE));
         Assertions.assertTrue(loginText.isDisplayed());
     }
