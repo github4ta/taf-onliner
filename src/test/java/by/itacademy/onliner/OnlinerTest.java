@@ -30,7 +30,6 @@ public class OnlinerTest {
         String actualFooterCoopyright = driver.findElement(By.xpath(OnlinerPage.LABEL_COPYRIGHT)).getText();
         Util.waitFor(1);
         Assertions.assertEquals("© 2001—2023 Onlíner", actualFooterCoopyright);
-
     }
 
     @Test
@@ -84,7 +83,6 @@ public class OnlinerTest {
         driver.findElement(By.xpath(OnlinerPage.LINK_CATALOG)).click();
         WebElement LabelTextCatalog = driver.findElement(By.xpath(OnlinerPage.LABEL_CATALOG));
         Assertions.assertEquals("КаталогВсе суперцены!", LabelTextCatalog.getText());
-
     }
 
     @Test
@@ -179,7 +177,9 @@ public class OnlinerTest {
         Assertions.assertEquals("Правила возврата", footerPravilaVozvrataElement.getText());
     }
 
+
     @Test
+
     public void testSelectNews() {
         driver.findElement(By.xpath(OnlinerPage.LINK_NEWS)).click();
         driver.findElement(By.xpath(OnlinerPage.NEWS_MONEY_LINK)).click();
@@ -201,6 +201,17 @@ public class OnlinerTest {
         Util.waitForPresenceElementByXPath(driver, OnlinerPage.LABEL_RENT_APARTMENT_PRICE_EXACT, 10000);
         String priceOnPrivatePage = driver.findElement(By.xpath(OnlinerPage.LABEL_RENT_APARTMENT_PRICE_EXACT)).getText();
         Assertions.assertEquals(priceOnGeneralPage, priceOnPrivatePage);
+    }
+
+    @Test
+    public void testChoosingInServices() {
+        driver.findElement(By.xpath(OnlinerPage.LINK_SERVICES)).click();
+        WebElement servicesFirstItem = driver.findElement(By.xpath(OnlinerPage.SERVICES_PRICE_FIRST_ITEM));
+        String firstServicesItem = servicesFirstItem.getText();
+        servicesFirstItem.click();
+        WebElement servicesFirstItemExact = driver.findElement(By.xpath(OnlinerPage.SERVICES_PRICE_EXACT));
+        String firstServicesItemExact = servicesFirstItemExact.getText();
+        Assertions.assertEquals(firstServicesItem,firstServicesItemExact);
     }
 
     @Test

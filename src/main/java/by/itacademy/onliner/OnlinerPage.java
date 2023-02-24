@@ -24,9 +24,11 @@ public class OnlinerPage {
     public static final String LABEL_CATALOG = "//div[@class='catalog-navigation__title']";
     public static final String LABEL_TV_AND_VIDEO = "//div[@class='catalog-navigation-list__aside-title'][contains(text(), 'Телевидение')]";
     public static final String BUTTON_TV = "//a[@href='https://catalog.onliner.by/tv']";
+
     public static final String LABEL_LAPTOPS_COMPUTERS_AND_MONITOR = "//div[@class='catalog-navigation-list__aside-title'][text()=' Ноутбуки, компьютеры, мониторы ']";
     public static final String LINK_LAPTOPS = "//a[@href='https://catalog.onliner.by/notebook']";
     public static final String LABEL_VEHICLE_MODEL = "//*[@id=\"list\"]/div[2]/div/a[1]/div/div/div[3]/div/div[2]/div/div[1]";
+
     public static final String FIRST_AUTO_FLEA_MARKET = "//*[@id=\"list\"]/div[2]/div/a[1]/div/div/div[1]/div/div[1]/div[1]/div[2]";
     public static final String LABEL_VEHICLE_MODEL_TITLE = "//*[@id=\"container\"]/div/div/div/div/div/div[2]/div/div/div[1]/div/div[4]/div[1]/h1";
 
@@ -34,6 +36,7 @@ public class OnlinerPage {
 
     public static final String BUTTON_HOUSES_AND_APARTMENTS_SALE = "//span[@class='project-navigation__sign'][text()='Продажа']";
     public static final String BUTTON_HOUSES_AND_APARTMENTS_RENT = "//span[@class='project-navigation__sign'][text()='Аренда']";
+
     public static final String LABEL_ORDERS = "//div[@class='service-header__title service-header__title_huge'][text()='Заказы']";
     public static final String LABEL_FLEA_MARKET_TITLE = "//h1[@class='m-title-i']";
     public static final String LABEL_FORUM_TITLE = "//h1[@class='m-title']";
@@ -75,11 +78,14 @@ public class OnlinerPage {
     public static final String NEWS_MONEY_LINK = "//h2/a[contains(text(),'Кошелек')]";
     public static final String FIRST_TITLE = "//a[@class='news-tidings__link']/span[contains(text(),'Этот белорусский продукт')][1]";
     public static final String FIRST_BLOCK_OF_NEWS = "//*[@id='container']//div[@data-post-date='1676985631']";
+
     public static final String LABEL_ARTICLE_TITLE = "//*[@id='container']//h1";
     public static final String LABEL_RENT_APARTMENT_ALL_PRICES = "//span[@data-bind=\"text: SearchApartments.formatPrice(apartment.price, 'BYN')\"]";
     public static final String LABEL_RENT_APARTMENT_PRICE_EXACT = "//span[@class='apartment-bar__price apartment-bar__price_primary']";
-    public static final String LIST_OF_FORUM_THEMES = "//ul[@class = 'b-list-topics']//li//h3";
-    public static final String LABEL_TITLE_FIRST_FORUM_THEME = "//div[@class = 'b-mnforum-header']//h1//a";
+
     public static final String LABEL_SERVICE_ITEM_TITLE = "//*[@id=\"container\"]/div/div[2]/div/div/div/div/div/div[1]/div/div/div/div[1]/div";
     public static final String SERVICES_PRICE_FIRST_ITEM ="//*[@id=\"service-list\"]/div[2]/div/div/div[3]/search-tasks-list/div/div/div[1]/search-tasks-item/div/div/div[1]/div/a/span[2]/span[1]";
+
+    public static final String LIST_OF_FORUM_THEMES = "//ul[@class = 'b-list-topics']//li//h3";
+    public static final String LABEL_TITLE_FIRST_FORUM_THEME = "//div[@class = 'b-mnforum-header']//h1//a";
 }
