@@ -194,11 +194,11 @@ public class OnlinerTest {
     public void testAbilitySelectAdvertInHouses() {
         driver.findElement(By.xpath(OnlinerPage.LINK_HOUSES_AND_APARTMENTS)).click();
         driver.findElement(By.xpath(OnlinerPage.BUTTON_HOUSES_AND_APARTMENTS_RENT)).click();
-        Util.waitForPresenceElementByXPath(driver, OnlinerPage.LABEL_RENT_APARTMENT_ALL_PRICES, 10000);
+        Util.waitForPresenceElementByXPath(driver, OnlinerPage.LABEL_RENT_APARTMENT_ALL_PRICES, 10);
         String priceOnGeneralPage = String.format("%s р.", driver.findElement(By
                 .xpath(OnlinerPage.LABEL_RENT_APARTMENT_ALL_PRICES)).getText());
         driver.findElement(By.xpath(OnlinerPage.LABEL_RENT_APARTMENT_ALL_PRICES)).click();
-        Util.waitForPresenceElementByXPath(driver, OnlinerPage.LABEL_RENT_APARTMENT_PRICE_EXACT, 10000);
+        Util.waitForPresenceElementByXPath(driver, OnlinerPage.LABEL_RENT_APARTMENT_PRICE_EXACT, 10);
         String priceOnPrivatePage = driver.findElement(By.xpath(OnlinerPage.LABEL_RENT_APARTMENT_PRICE_EXACT)).getText();
         Assertions.assertEquals(priceOnGeneralPage, priceOnPrivatePage);
     }
@@ -219,7 +219,7 @@ public class OnlinerTest {
         driver.findElement(By.xpath(OnlinerPage.LABEL_AUTO_FLEA_MARKET_TITLE)).click();
         String firstTxtAutoFleaMarketElement = driver.findElement(By.xpath(OnlinerPage.LABEL_VEHICLE_MODEL)).getText();
         driver.findElement(By.xpath(OnlinerPage.FIRST_AUTO_FLEA_MARKET)).click();
-        Util.waitForPresenceElementByXPath(driver, OnlinerPage.LABEL_VEHICLE_MODEL_TITLE, 10000);
+        Util.waitForPresenceElementByXPath(driver, OnlinerPage.LABEL_VEHICLE_MODEL_TITLE, 10);
         String txtAutoFleaMarketElement = driver.findElement(By.xpath(OnlinerPage.LABEL_VEHICLE_MODEL_TITLE)).getText();
 
         Assertions.assertEquals(firstTxtAutoFleaMarketElement, txtAutoFleaMarketElement);
