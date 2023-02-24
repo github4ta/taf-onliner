@@ -1,10 +1,14 @@
 package by.itacademy.calculator;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class CalculatorStep {
 
+    CalculatorStep(WebDriver driver) {
+
+    }
     public void doCalculate() {
         WebElement inputName = driver.findElement(By.xpath(CalculatorPage.INPUT_NAME));
         inputName.sendKeys("Иван");
