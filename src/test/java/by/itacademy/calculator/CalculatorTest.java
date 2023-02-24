@@ -9,5 +9,6 @@ public class CalculatorTest {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         String url = "https://svyatoslav.biz/testlab/wt/index.php";
+        driver.navigate().to(url);
     }
 }
