@@ -46,7 +46,7 @@ public class OnlinerTest {
         driver.findElement(By.xpath(OnlinerPage.BUTTON_CATALOG_ELECTRONICS)).click();
         driver.findElement(By.xpath(OnlinerPage.LABEL_TV_AND_VIDEO)).click();
         driver.findElement(By.xpath(OnlinerPage.CATALOG_NAVIGATION_LIST_ITEM_TV)).click();
-        Assertions.assertEquals("Телевизоры", driver.findElement(By.xpath(OnlinerPage.LABEL_TV)).getText());
+        Assertions.assertEquals("Телевизоры", driver.findElement(By.xpath(OnlinerPage.LABEL_TV_TITLE)).getText());
     }
 
     @Test
@@ -206,9 +206,9 @@ public class OnlinerTest {
     @Test
     public void testTVinCart() {
         driver.findElement(By.xpath(OnlinerPage.LINK_CATALOG)).click();
-        driver.findElement(By.xpath(OnlinerPage.BUTTON_ELECTRONICS)).click();
+        driver.findElement(By.xpath(OnlinerPage.BUTTON_CATALOG_ELECTRONICS)).click();
         driver.findElement(By.xpath(OnlinerPage.LABEL_TV_AND_VIDEO)).click();
-        driver.findElement(By.xpath(OnlinerPage.BUTTON_TV)).click();
+        driver.findElement(By.xpath(OnlinerPage.CATALOG_NAVIGATION_LIST_ITEM_TV)).click();
         Util.waitForPresenceElementByXPath(driver, OnlinerPage.BUTTON_TV_OFFERS, 6000);
         String titleOnMainPage = driver.findElement(By.xpath(OnlinerPage.FIRST_TV_TITLE)).getText();
         driver.findElement(By.xpath(OnlinerPage.BUTTON_TV_OFFERS)).click();
@@ -219,15 +219,7 @@ public class OnlinerTest {
         String titleOnCart = btnElement.getText();
         Assertions.assertEquals(titleOnMainPage, titleOnCart);
     }
-    public void testChoosingInServices() {
-        driver.findElement(By.xpath(OnlinerPage.LINK_SERVICES)).click();
-        WebElement servicesFirstItem = driver.findElement(By.xpath(OnlinerPage.SERVICES_PRICE_FIRST_ITEM));
-        String firstServicesItem = servicesFirstItem.getText();
-        servicesFirstItem.click();
-        WebElement servicesFirstItemExact = driver.findElement(By.xpath(OnlinerPage.SERVICES_PRICE_EXACT));
-        String firstServicesItemExact = servicesFirstItemExact.getText();
-        Assertions.assertEquals(firstServicesItem,firstServicesItemExact);
-    }
+
     @Test
     public void testOpportunitySelectAdsAutobaraholka() {
         driver.findElement(By.xpath(OnlinerPage.LABEL_AUTO_FLEA_MARKET_TITLE)).click();
