@@ -7,4 +7,5 @@ public class CalculatorPage {
     static final String INPUT_WEIGHT = "//input[@name='weight']";
     static final String INPUT_GENDER_M = "//input[@value='m']";
     static final String INPUT_GENDER_F = "//input[@value='f']";
+    static final String BUTTON_CALCULATE = "//input[@type='submit']";
 }
