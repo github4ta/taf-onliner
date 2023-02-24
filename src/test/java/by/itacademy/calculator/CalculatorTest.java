@@ -7,5 +7,6 @@ public class CalculatorTest {
 
     public void testCalculator() {
         WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
     }
 }
