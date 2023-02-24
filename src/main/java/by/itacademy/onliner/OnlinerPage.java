@@ -16,7 +16,6 @@ public class OnlinerPage {
     public static final String BUTTON_CART = "//a[@class='auth-bar__item auth-bar__item--cart']";
     public static final String BUTTON_CATALOG_ELECTRONICS = "//span[@class='catalog-navigation-classifier__item-title-wrapper'][text()='Электроника']";
     public static final String BUTTON_CATALOG_COMPUTERS_AND_NETWORKS = "//span[@class='catalog-navigation-classifier__item-title-wrapper'][contains(text(),'Компьютеры')]";
-    public static final String BUTTON_CATALOG_APPLIANCES = "//span[@class='catalog-navigation-classifier__item-title-wrapper'][text()='Бытовая техника']";
 
     public static final String BUTTON_SUBMIT_AUTHORIZATION_FORM = "//button[@class='auth-button auth-button_primary auth-button_middle auth-form__button auth-form__button_width_full']";
 
