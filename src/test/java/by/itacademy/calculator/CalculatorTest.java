@@ -19,5 +19,6 @@ public class CalculatorTest {
         WebElement inputHeight = driver.findElement(By.xpath(CalculatorPage.INPUT_HEIGHT));
         inputHeight.sendKeys("180");
         WebElement inputWeight = driver.findElement(By.xpath(CalculatorPage.INPUT_WEIGHT));
+        inputWeight.sendKeys("78");
     }
 }
