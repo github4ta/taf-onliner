@@ -204,6 +204,7 @@ public class OnlinerTest {
     }
     @Test
     public void testTVinCart() {
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
         driver.findElement(By.xpath(OnlinerPage.LINK_CATALOG)).click();
         driver.findElement(By.xpath(OnlinerPage.BUTTON_CATALOG_ELECTRONICS)).click();
         driver.findElement(By.xpath(OnlinerPage.LABEL_TV_AND_VIDEO)).click();
