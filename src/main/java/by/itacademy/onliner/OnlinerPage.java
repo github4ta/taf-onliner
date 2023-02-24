@@ -12,19 +12,21 @@ public class OnlinerPage {
     public static final String LINK_FLEA_MARKET = "//span[@class='b-main-navigation__text'][contains(text(),'Барахолка')]";
     public static final String LINK_FORUM = "//span[@class='b-main-navigation__text'][contains(text(),'Форум')]";
 
-    public static final String BUTTON_ENTRANCE = "//div[@class='auth-bar__item auth-bar__item--text']";
+    public static final String BUTTON_LOGIN = "//div[@class='auth-bar__item auth-bar__item--text']";
     public static final String BUTTON_CART = "//a[@class='auth-bar__item auth-bar__item--cart']";
-    public static final String BUTTON_ELECTRONICS = "//span[@class='catalog-navigation-classifier__item-title-wrapper'][text()='Электроника']";
-    public static final String BUTTON_COMPUTERS_AND_NETWORKS = "//span[@class='catalog-navigation-classifier__item-title-wrapper'][contains(text(),'Компьютеры')]";
-    public static final String BUTTON_APPLIANCES = "//span[@class='catalog-navigation-classifier__item-title-wrapper'][text()='Бытовая техника']";
-    public static final String BUTTON_REGISTRATION_ENTRANCE = "//button[@class='auth-button auth-button_primary auth-button_middle auth-form__button auth-form__button_width_full']";
+    public static final String BUTTON_CATALOG_ELECTRONICS = "//span[@class='catalog-navigation-classifier__item-title-wrapper'][text()='Электроника']";
+    public static final String BUTTON_CATALOG_COMPUTERS_AND_NETWORKS = "//span[@class='catalog-navigation-classifier__item-title-wrapper'][contains(text(),'Компьютеры')]";
+    public static final String BUTTON_CATALOG_APPLIANCES = "//span[@class='catalog-navigation-classifier__item-title-wrapper'][text()='Бытовая техника']";
+
+    public static final String BUTTON_SUBMIT_AUTHORIZATION_FORM = "//button[@class='auth-button auth-button_primary auth-button_middle auth-form__button auth-form__button_width_full']";
 
     public static final String LABEL_COPYRIGHT = "//div[@class='footer-style__copy']";
     public static final String LINK_ABOUT_THE_COMPANY = "//a[@href='https://blog.onliner.by/about']";
     public static final String LABEL_CATALOG = "//div[@class='catalog-navigation__title']";
     public static final String LABEL_TV_AND_VIDEO = "//div[@class='catalog-navigation-list__aside-title'][contains(text(), 'Телевидение')]";
-    public static final String BUTTON_TV = "//a[@href='https://catalog.onliner.by/tv']";
 
+    public static final String CATALOG_NAVIGATION_LIST_ITEM_TV = "//a[@href='https://catalog.onliner.by/tv']";
+   
     public static final String LABEL_LAPTOPS_COMPUTERS_AND_MONITOR = "//div[@class='catalog-navigation-list__aside-title'][text()=' Ноутбуки, компьютеры, мониторы ']";
     public static final String LINK_LAPTOPS = "//a[@href='https://catalog.onliner.by/notebook']";
     public static final String LABEL_VEHICLE_MODEL = "//*[@id=\"list\"]/div[2]/div/a[1]/div/div/div[3]/div/div[2]/div/div[1]";
@@ -52,7 +54,6 @@ public class OnlinerPage {
     public static final String LABEL_ERR_NO_PASSWORD = "//*[@id=\"auth-container\"]/div/div[2]/div/form/div[2]/div/div/div[2]/div";
     public static final String LABEL_ERR_NO_EMAIL = "//*[@id=\"auth-container\"]/div/div[2]/div/form/div[1]/div/div[2]/div/div/div[2]/div";
     public static final String INPUT_LOGIN = "//*[@id='auth-container']/div/div[2]/div/form/div[1]/div/div[2]/div/div/div/div/input";
-    public static final String BTN_ENTER = "//*[@id='auth-container']/div/div[2]/div/form/div[3]/button";
     //The following line with INPUT_PASSWORD locator has the same xpath as LABEL_ERR_NO_PASSWORD. Should be removed and the code should be refactored
     public static final String INPUT_PASSWORD = "//*[@id=\"auth-container\"]/div/div[2]/div/form/div[2]/div/div/div[2]/div";
     public static final String BUTTON_NUMBERS_OF_OFFERS_LAPTOPS = "//div[@class='schema-product__offers']/a";
