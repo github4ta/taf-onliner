@@ -23,5 +23,6 @@ public class CalculatorTest {
         WebElement inputGender = driver.findElement(By.xpath(CalculatorPage.INPUT_GENDER_F));
         inputGender.click();
         WebElement buttonCalculate = driver.findElement(By.xpath(CalculatorPage.BUTTON_CALCULATE));
+        buttonCalculate.click();
     }
 }
