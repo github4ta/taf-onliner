@@ -6,9 +6,12 @@ import org.openqa.selenium.WebElement;
 
 public class CalculatorStep {
 
-    CalculatorStep(WebDriver driver) {
+    WebDriver driver;
 
+    CalculatorStep(WebDriver driver) {
+        this.driver = driver;
     }
+
     public void doCalculate() {
         WebElement inputName = driver.findElement(By.xpath(CalculatorPage.INPUT_NAME));
         inputName.sendKeys("Иван");
