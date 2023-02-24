@@ -21,6 +21,6 @@ public class CalculatorTest {
         WebElement inputWeight = driver.findElement(By.xpath(CalculatorPage.INPUT_WEIGHT));
         inputWeight.sendKeys("78");
         WebElement inputGender = driver.findElement(By.xpath(CalculatorPage.INPUT_GENDER_F));
-
+        inputGender.click();
     }
 }
