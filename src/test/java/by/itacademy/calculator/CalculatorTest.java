@@ -14,9 +14,10 @@ public class CalculatorTest {
         driver.manage().window().maximize();
         String url = "https://svyatoslav.biz/testlab/wt/index.php";
         driver.navigate().to(url);
-        WebElement input_name = driver.findElement(By.xpath(CalculatorPage.INPUT_NAME));
-        input_name.sendKeys("Иван");
-        WebElement input_height = driver.findElement(By.xpath(CalculatorPage.INPUT_HEIGHT));
-        input_height.sendKeys("180");
+        WebElement inputName = driver.findElement(By.xpath(CalculatorPage.INPUT_NAME));
+        inputName.sendKeys("Иван");
+        WebElement inputHeight = driver.findElement(By.xpath(CalculatorPage.INPUT_HEIGHT));
+        inputHeight.sendKeys("180");
+        WebElement inputWeight = driver.findElement(By.xpath(CalculatorPage.INPUT_WEIGHT));
     }
 }
