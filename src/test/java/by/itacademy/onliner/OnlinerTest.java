@@ -253,8 +253,8 @@ public class OnlinerTest {
         Util.waitForPresenceElementByXPath(driver, OnlinerPage.LABEL_SERVICE_ITEM_TITLE, 6000);
         WebElement servicesFirstItemExact = driver.findElement(By.xpath(OnlinerPage.LABEL_SERVICE_ITEM_TITLE));
         Util.waitForPresenceElementByXPath(driver, OnlinerPage.LABEL_SERVICE_ITEM_TITLE, 6000);
-        String firstServicesItemExact = servicesFirstItemExact.getText();
         Util.waitFor(5);
+        String firstServicesItemExact = servicesFirstItemExact.getText();
         Assertions.assertEquals(firstServicesItem,firstServicesItemExact);
     }
     @AfterEach
