@@ -180,7 +180,6 @@ public class OnlinerTest {
 
 
     @Test
-
     public void testSelectNews() {
         driver.findElement(By.xpath(OnlinerPage.LINK_NEWS)).click();
         driver.findElement(By.xpath(OnlinerPage.NEWS_MONEY_LINK)).click();
