@@ -8,5 +8,6 @@ public class CalculatorTest {
     public void testCalculator() {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
+        String url = "https://svyatoslav.biz/testlab/wt/index.php";
     }
 }
