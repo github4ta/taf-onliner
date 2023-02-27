@@ -1,9 +1,6 @@
 package by.itacademy.onliner;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -26,6 +23,7 @@ public class OnlinerTest {
     }
 
     @Test
+    @DisplayName("ONLINER-UI-006")
     public void testOnlinerOpen() {
         String actualFooterCoopyright = driver.findElement(By.xpath(OnlinerPage.LABEL_COPYRIGHT)).getText();
         Util.waitFor(1);
@@ -33,6 +31,7 @@ public class OnlinerTest {
     }
 
     @Test
+    @DisplayName("ONLINER-UI-151")
     public void testCart() {
         driver.findElement(By.xpath(OnlinerPage.BUTTON_CART)).click();
         WebElement TITLE_CART_Element = driver.findElement(By.xpath(OnlinerPage.LABEL_CART_TITLE));
@@ -40,6 +39,7 @@ public class OnlinerTest {
     }
 
     @Test
+    @DisplayName("ONLINER-UI-051")
     public void openTV() {
         driver.findElement(By.xpath((OnlinerPage.LINK_CATALOG))).click();
         driver.findElement(By.xpath(OnlinerPage.BUTTON_CATALOG_ELECTRONICS)).click();
@@ -49,6 +49,7 @@ public class OnlinerTest {
     }
 
     @Test
+    @DisplayName("ONLINER-UI-021")
     public void testOpenFleaMarket() {
         driver.findElement(By.xpath(OnlinerPage.LINK_FLEA_MARKET)).click();
         WebElement TitleFleaMarket = driver.findElement(By.xpath(OnlinerPage.LABEL_FLEA_MARKET_TITLE));
@@ -56,6 +57,7 @@ public class OnlinerTest {
     }
 
     @Test
+    @DisplayName("ONLINER-UI-004")
     public void testHousesAndFlats() {
         driver.findElement(By.xpath(OnlinerPage.LINK_HOUSES_AND_APARTMENTS)).click();
         WebElement textOfBtnSale = driver.findElement(By.xpath(OnlinerPage.BUTTON_HOUSES_AND_APARTMENTS_SALE));
@@ -63,6 +65,7 @@ public class OnlinerTest {
     }
 
     @Test
+    @DisplayName("ONLINER-UI-004")
     public void testHousesAndFlatsRent() {
         driver.findElement(By.xpath(OnlinerPage.LINK_HOUSES_AND_APARTMENTS)).click();
         WebElement textOfBtnRent = driver.findElement(By.xpath(OnlinerPage.BUTTON_HOUSES_AND_APARTMENTS_RENT));
@@ -70,6 +73,7 @@ public class OnlinerTest {
     }
 
     @Test
+    @DisplayName("ONLINER-UI-999")
     public void testOboutOnliner() {
         WebElement OBOUT_BTN_ELEMENT = driver.findElement(By.xpath(OnlinerPage.LINK_ABOUT_THE_COMPANY));
         OBOUT_BTN_ELEMENT.click();
@@ -78,6 +82,7 @@ public class OnlinerTest {
     }
 
     @Test
+    @DisplayName("ONLINER-UI-088")
     public void testCatalogOnliner() {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         driver.findElement(By.xpath(OnlinerPage.LINK_CATALOG)).click();
@@ -86,6 +91,7 @@ public class OnlinerTest {
     }
 
     @Test
+    @DisplayName("ONLINER-UI-091")
     public void testAbilitySearchByWord() {
         driver.findElement(By.xpath(OnlinerPage.SEARCH_LINE)).sendKeys(OnlinerPage.TEXT_FOR_SEARCH);
         new WebDriverWait(driver, Duration.ofSeconds(10))
@@ -97,6 +103,7 @@ public class OnlinerTest {
     }
 
     @Test
+    @DisplayName("ONLINER-UI-081")
     public void testOpenOnliner() {
         Util.waitFor(3);
         By btnLoginBy = By.xpath(OnlinerPage.BUTTON_LOGIN);
@@ -108,6 +115,7 @@ public class OnlinerTest {
     }
 
     @Test
+    @DisplayName("ONLINER-UI-009")
     public void testLabelForum() {
         driver.findElement(By.xpath(OnlinerPage.LINK_FORUM)).click();
         WebElement labelForum = driver.findElement(By.xpath(OnlinerPage.LABEL_FORUM_TITLE));
@@ -115,6 +123,7 @@ public class OnlinerTest {
     }
 
     @Test
+    @DisplayName("ONLINER-UI-007")
     public void testWithEmptyFields() {
         driver.findElement(By.xpath(OnlinerPage.BUTTON_LOGIN)).click();
         driver.findElement(By.xpath(OnlinerPage.BUTTON_SUBMIT_AUTHORIZATION_FORM)).click();
@@ -126,6 +135,7 @@ public class OnlinerTest {
     }
 
     @Test
+    @DisplayName("ONLINER-UI-011")
     public void testLoginFormWithEmptyPassword() {
         driver.findElement(By.xpath(OnlinerPage.BUTTON_LOGIN)).click();
         WebElement inputLogin = driver.findElement(By.xpath(OnlinerPage.INPUT_LOGIN));
@@ -136,6 +146,7 @@ public class OnlinerTest {
     }
 
     @Test
+    @DisplayName("ONLINER-UI-882")
     public void testAddLaptopInCart() {
         driver.findElement(By.xpath(OnlinerPage.LINK_CATALOG)).click();
         driver.findElement(By.xpath(OnlinerPage.BUTTON_CATALOG_COMPUTERS_AND_NETWORKS)).click();
@@ -151,6 +162,7 @@ public class OnlinerTest {
     }
 
     @Test
+    @DisplayName("ONLINER-UI-889")
     public void testFooterElements() {
         int count = driver.findElements(By.className(OnlinerPage.FOOTER_ELEMENTS_CLASS)).size();
         System.out.println(count);
@@ -180,6 +192,7 @@ public class OnlinerTest {
 
 
     @Test
+    @DisplayName("ONLINER-UI-887")
     public void testSelectNews() {
         driver.findElement(By.xpath(OnlinerPage.LINK_NEWS)).click();
         driver.findElement(By.xpath(OnlinerPage.NEWS_MONEY_LINK)).click();
@@ -191,6 +204,7 @@ public class OnlinerTest {
     }
 
     @Test
+    @DisplayName("ONLINER-UI-885")
     public void testAbilitySelectAdvertInHouses() {
         driver.findElement(By.xpath(OnlinerPage.LINK_HOUSES_AND_APARTMENTS)).click();
         driver.findElement(By.xpath(OnlinerPage.BUTTON_HOUSES_AND_APARTMENTS_RENT)).click();
@@ -204,6 +218,7 @@ public class OnlinerTest {
     }
 
     @Test
+    @DisplayName("ONLINER-UI-881")
     public void testTVinCart() {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.findElement(By.xpath(OnlinerPage.LINK_CATALOG)).click();
@@ -219,6 +234,7 @@ public class OnlinerTest {
     }
 
     @Test
+    @DisplayName("ONLINER-UI-883")
     public void testOpportunitySelectAdsAutobaraholka() {
         driver.findElement(By.xpath(OnlinerPage.LINK_CAR_MARKET)).click();
         String firstTxtAutoFleaMarketElement = driver.findElement(By.xpath(OnlinerPage.LABEL_VEHICLE_MODEL)).getText();
@@ -230,6 +246,7 @@ public class OnlinerTest {
     }
 
     @Test
+    @DisplayName("ONLINER-UI-888")
     public void testAbilitySelectForumTheme() {
         driver.findElement(By.xpath(OnlinerPage.LINK_FORUM)).click();
         driver.findElement(By.xpath(OnlinerPage.LABEL_FORUM_TITLE)).click();
@@ -242,6 +259,7 @@ public class OnlinerTest {
     }
 
     @Test
+    @DisplayName("ONLINER-UI-886")
     public void testChoosingInServices() {
         driver.findElement(By.xpath(OnlinerPage.LINK_SERVICES)).click();
         WebElement servicesFirstItem = driver.findElement(By.xpath(OnlinerPage.SERVICES_PRICE_FIRST_ITEM));
