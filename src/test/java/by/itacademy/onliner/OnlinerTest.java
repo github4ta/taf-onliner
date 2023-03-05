@@ -33,9 +33,8 @@ public class OnlinerTest {
     @Test
     @DisplayName("ONLINER-UI-151")
     public void testCart() {
-        driver.findElement(By.xpath(OnlinerPage.BUTTON_CART)).click();
-        WebElement TITLE_CART_Element = driver.findElement(By.xpath(OnlinerPage.LABEL_CART_TITLE));
-        Assertions.assertEquals("Корзина", TITLE_CART_Element.getText());
+        OnlinerStep onlinerCart = new OnlinerStep(driver);
+        Assertions.assertEquals("Корзина", onlinerCart.openCart());
     }
 
     @Test
