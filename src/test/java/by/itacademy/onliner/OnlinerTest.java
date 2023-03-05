@@ -14,12 +14,14 @@ import java.util.List;
 public class OnlinerTest {
 
     WebDriver driver;
+    OnlinerStep onliner;
 
     @BeforeEach
     public void warmUp() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get(OnlinerPage.URL);
+        onliner = new OnlinerStep(driver);
     }
 
     @Test
@@ -33,9 +35,7 @@ public class OnlinerTest {
     @Test
     @DisplayName("ONLINER-UI-151")
     public void testCart() {
-        driver.findElement(By.xpath(OnlinerPage.BUTTON_CART)).click();
-        WebElement TITLE_CART_Element = driver.findElement(By.xpath(OnlinerPage.LABEL_CART_TITLE));
-        Assertions.assertEquals("Корзина", TITLE_CART_Element.getText());
+        Assertions.assertEquals("Корзина", onliner.openCart());
     }
 
     @Test
