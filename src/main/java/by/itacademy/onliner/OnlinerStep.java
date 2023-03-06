@@ -20,7 +20,7 @@ public class OnlinerStep {
 
     public String openFleaMarketSection(){
         driver.findElement(By.xpath(OnlinerPage.LINK_FLEA_MARKET)).click();
-        WebElement TitleFleaMarket = driver.findElement(By.xpath(OnlinerPage.LABEL_FLEA_MARKET_TITLE));
-        return TitleFleaMarket.getText();
+        WebElement titleFleaMarket = driver.findElement(By.xpath(OnlinerPage.LABEL_FLEA_MARKET_TITLE));
+        return titleFleaMarket.getText();
     }
 }
