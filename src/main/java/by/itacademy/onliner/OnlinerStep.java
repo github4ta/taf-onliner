@@ -17,4 +17,10 @@ public class OnlinerStep {
         WebElement TITLE_CART_Element = driver.findElement(By.xpath(OnlinerPage.LABEL_CART_TITLE));
         return TITLE_CART_Element.getText();
     }
+
+    public String openFleaMarketSection(){
+        driver.findElement(By.xpath(OnlinerPage.LINK_FLEA_MARKET)).click();
+        WebElement TitleFleaMarket = driver.findElement(By.xpath(OnlinerPage.LABEL_FLEA_MARKET_TITLE));
+        return TitleFleaMarket.getText();
+    }
 }

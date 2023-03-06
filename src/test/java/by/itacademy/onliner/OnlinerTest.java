@@ -51,9 +51,7 @@ public class OnlinerTest {
     @Test
     @DisplayName("ONLINER-UI-021")
     public void testOpenFleaMarket() {
-        driver.findElement(By.xpath(OnlinerPage.LINK_FLEA_MARKET)).click();
-        WebElement TitleFleaMarket = driver.findElement(By.xpath(OnlinerPage.LABEL_FLEA_MARKET_TITLE));
-        Assertions.assertEquals("Барахолка", TitleFleaMarket.getText());
+        Assertions.assertEquals("Барахолка", onliner.openFleaMarketSection());
     }
 
     @Test
