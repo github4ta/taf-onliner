@@ -176,6 +176,16 @@ public class OnlinerTest {
         Assertions.assertEquals("Вакансии", footerVacanciesElement.getText());
         WebElement footerManifestElement = driver.findElement(By.xpath(OnlinerPage.FOOTER_MANIFEST));
         Assertions.assertEquals("Манифест", footerManifestElement.getText());
+        WebElement footerPolsovatSoglashenieElement = driver.findElement(By.xpath(OnlinerPage.LINK_FOOTER_USER_AGREEMENT));
+        Assertions.assertEquals("Пользовательское соглашение", footerPolsovatSoglashenieElement.getText());
+        WebElement footerPublDogovoriElement = driver.findElement(By.xpath(OnlinerPage.LINK_FOOTER_PUBLIC_CONTRACTS));
+        Assertions.assertEquals("Публичные договоры", footerPublDogovoriElement.getText());
+        WebElement footerPolitikaKonfElement = driver.findElement(By.xpath(OnlinerPage.LINK_FOOTER_PRIVACY_POLICY));
+        Assertions.assertEquals("Политика конфиденциальности", footerPolitikaKonfElement.getText());
+        WebElement footerPodderzkaPolsovateleiElement = driver.findElement(By.xpath(OnlinerPage.LINK_FOOTER_SUPPORT));
+        Assertions.assertEquals("Поддержка пользователей", footerPodderzkaPolsovateleiElement.getText());
+        WebElement footerPravilaVozvrataElement = driver.findElement(By.xpath(OnlinerPage.LINK_FOOTER_REFUND_POLICY));
+        Assertions.assertEquals("Правила возврата", footerPravilaVozvrataElement.getText());
         WebElement footerTermsElement = driver.findElement(By.xpath(OnlinerPage.FOOTER_TERMS_OF_USE));
         Assertions.assertEquals("Пользовательское соглашение", footerTermsElement.getText());
         WebElement footerPublicAgreementElement = driver.findElement(By.xpath(OnlinerPage.FOOTER_PUBLIC_AGREEMENT));
@@ -186,7 +196,7 @@ public class OnlinerTest {
         Assertions.assertEquals("Поддержка пользователей", footerSupportElement.getText());
         WebElement footerReturnPolicyElement = driver.findElement(By.xpath(OnlinerPage.FOOTER_RETURN_POLICY));
         Assertions.assertEquals("Правила возврата", footerReturnPolicyElement.getText());
-    }
+   }
 
 
     @Test
