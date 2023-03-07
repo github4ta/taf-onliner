@@ -18,6 +18,12 @@ public class OnlinerStep {
         return TITLE_CART_Element.getText();
     }
 
+    public String openFleaMarketSection(){
+        driver.findElement(By.xpath(OnlinerPage.LINK_FLEA_MARKET)).click();
+        WebElement titleFleaMarket = driver.findElement(By.xpath(OnlinerPage.LABEL_FLEA_MARKET_TITLE));
+        return titleFleaMarket.getText();
+        }
+
     public String openForumSection() {
         driver.findElement(By.xpath(OnlinerPage.LINK_FORUM)).click();
         WebElement labelForum = driver.findElement(By.xpath(OnlinerPage.LABEL_FORUM_TITLE));
