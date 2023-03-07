@@ -11,7 +11,17 @@ public class OnlinerPage {
     public static final String LINK_SERVICES = "//span[@class='b-main-navigation__text'][contains(text(),'Услуги')]";
     public static final String LINK_FLEA_MARKET = "//span[@class='b-main-navigation__text'][contains(text(),'Барахолка')]";
     public static final String LINK_FORUM = "//span[@class='b-main-navigation__text'][contains(text(),'Форум')]";
-
+    public static final String LINK_FOOTER_USER_AGREEMENT = "//a[@href='https://blog.onliner.by/siterules']";
+    public static final String LINK_FOOTER_ABOUT_COMPANY = "//a[@href='https://blog.onliner.by/about']";
+    public static final String LINK_FOOTER_KONTAKTS_EDITORIAL = "//a[@href='https://people.onliner.by/contacts']";
+    public static final String LINK_FOOTER_ADVERTISING = "//a[@href='https://b2breg.onliner.by/advertising']";
+    public static final String LINK_FOOTER_RATES = "//a[@href='https://docs.google.com/spreadsheets/d/1SGFaTkV_Ru4vI29ml9yvR-dMz9rOl7DVVpKk64w5lqM/edit']";
+    public static final String LINK_FOOTER_VACANCY = "//a[@href='https://blog.onliner.by/vacancy']";
+    public static final String LINK_FOOTER_MANIFESTO = "//a[@href='https://blog.onliner.by/manifest']";
+    public static final String LINK_FOOTER_PUBLIC_CONTRACTS = "//a[@href='https://blog.onliner.by/publichnye-dogovory']";
+    public static final String LINK_FOOTER_PRIVACY_POLICY = "//a[@href='https://blog.onliner.by/politika-konfidencialnosti']";
+    public static final String LINK_FOOTER_SUPPORT = "//a[@href='https://blog.onliner.by/politika-konfidencialnosti']";
+    public static final String LINK_FOOTER_REFUND_POLICY = "//a[@href='https://blog.onliner.by/politika-konfidencialnosti']";
     public static final String BUTTON_LOGIN = "//div[@class='auth-bar__item auth-bar__item--text']";
     public static final String BUTTON_CART = "//a[@class='auth-bar__item auth-bar__item--cart']";
     public static final String BUTTON_CATALOG_ELECTRONICS = "//span[@class='catalog-navigation-classifier__item-title-wrapper'][text()='Электроника']";

@@ -115,9 +115,7 @@ public class OnlinerTest {
     @Test
     @DisplayName("ONLINER-UI-009")
     public void testLabelForum() {
-        driver.findElement(By.xpath(OnlinerPage.LINK_FORUM)).click();
-        WebElement labelForum = driver.findElement(By.xpath(OnlinerPage.LABEL_FORUM_TITLE));
-        Assertions.assertEquals("Форум", driver.findElement(By.xpath(OnlinerPage.LABEL_FORUM_TITLE)).getText());
+        Assertions.assertEquals("Форум", onliner.openForumSection());
     }
 
     @Test
@@ -176,6 +174,16 @@ public class OnlinerTest {
         Assertions.assertEquals("Вакансии", footerVacanciesElement.getText());
         WebElement footerManifestElement = driver.findElement(By.xpath(OnlinerPage.FOOTER_MANIFEST));
         Assertions.assertEquals("Манифест", footerManifestElement.getText());
+        WebElement footerPolsovatSoglashenieElement = driver.findElement(By.xpath(OnlinerPage.LINK_FOOTER_USER_AGREEMENT));
+        Assertions.assertEquals("Пользовательское соглашение", footerPolsovatSoglashenieElement.getText());
+        WebElement footerPublDogovoriElement = driver.findElement(By.xpath(OnlinerPage.LINK_FOOTER_PUBLIC_CONTRACTS));
+        Assertions.assertEquals("Публичные договоры", footerPublDogovoriElement.getText());
+        WebElement footerPolitikaKonfElement = driver.findElement(By.xpath(OnlinerPage.LINK_FOOTER_PRIVACY_POLICY));
+        Assertions.assertEquals("Политика конфиденциальности", footerPolitikaKonfElement.getText());
+        WebElement footerPodderzkaPolsovateleiElement = driver.findElement(By.xpath(OnlinerPage.LINK_FOOTER_SUPPORT));
+        Assertions.assertEquals("Поддержка пользователей", footerPodderzkaPolsovateleiElement.getText());
+        WebElement footerPravilaVozvrataElement = driver.findElement(By.xpath(OnlinerPage.LINK_FOOTER_REFUND_POLICY));
+        Assertions.assertEquals("Правила возврата", footerPravilaVozvrataElement.getText());
         WebElement footerTermsElement = driver.findElement(By.xpath(OnlinerPage.FOOTER_TERMS_OF_USE));
         Assertions.assertEquals("Пользовательское соглашение", footerTermsElement.getText());
         WebElement footerPublicAgreementElement = driver.findElement(By.xpath(OnlinerPage.FOOTER_PUBLIC_AGREEMENT));
@@ -186,7 +194,7 @@ public class OnlinerTest {
         Assertions.assertEquals("Поддержка пользователей", footerSupportElement.getText());
         WebElement footerReturnPolicyElement = driver.findElement(By.xpath(OnlinerPage.FOOTER_RETURN_POLICY));
         Assertions.assertEquals("Правила возврата", footerReturnPolicyElement.getText());
-    }
+   }
 
 
     @Test
@@ -206,11 +214,11 @@ public class OnlinerTest {
     public void testAbilitySelectAdvertInHouses() {
         driver.findElement(By.xpath(OnlinerPage.LINK_HOUSES_AND_APARTMENTS)).click();
         driver.findElement(By.xpath(OnlinerPage.BUTTON_HOUSES_AND_APARTMENTS_RENT)).click();
-        Util.waitForPresenceElementByXPath(driver, OnlinerPage.LABEL_RENT_APARTMENT_ALL_PRICES, 10000);
+        Util.waitForPresenceElementByXPath(driver, OnlinerPage.LABEL_RENT_APARTMENT_ALL_PRICES, 10);
         String priceOnGeneralPage = String.format("%s р.", driver.findElement(By
                 .xpath(OnlinerPage.LABEL_RENT_APARTMENT_ALL_PRICES)).getText());
         driver.findElement(By.xpath(OnlinerPage.LABEL_RENT_APARTMENT_ALL_PRICES)).click();
-        Util.waitForPresenceElementByXPath(driver, OnlinerPage.LABEL_RENT_APARTMENT_PRICE_EXACT, 10000);
+        Util.waitForPresenceElementByXPath(driver, OnlinerPage.LABEL_RENT_APARTMENT_PRICE_EXACT, 10);
         String priceOnPrivatePage = driver.findElement(By.xpath(OnlinerPage.LABEL_RENT_APARTMENT_PRICE_EXACT)).getText();
         Assertions.assertEquals(priceOnGeneralPage, priceOnPrivatePage);
     }
@@ -237,7 +245,7 @@ public class OnlinerTest {
         driver.findElement(By.xpath(OnlinerPage.LINK_CAR_MARKET)).click();
         String firstTxtAutoFleaMarketElement = driver.findElement(By.xpath(OnlinerPage.LABEL_VEHICLE_MODEL)).getText();
         driver.findElement(By.xpath(OnlinerPage.FIRST_AUTO_FLEA_MARKET)).click();
-        Util.waitForPresenceElementByXPath(driver, OnlinerPage.LABEL_VEHICLE_MODEL_TITLE, 10000);
+        Util.waitForPresenceElementByXPath(driver, OnlinerPage.LABEL_VEHICLE_MODEL_TITLE, 10);
         String txtAutoFleaMarketElement = driver.findElement(By.xpath(OnlinerPage.LABEL_VEHICLE_MODEL_TITLE)).getText();
 
         Assertions.assertEquals(firstTxtAutoFleaMarketElement, txtAutoFleaMarketElement);
