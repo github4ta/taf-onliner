@@ -22,14 +22,14 @@ public class OnlinerPage {
     public static final String LINK_FOOTER_PRIVACY_POLICY = "//a[@href='https://blog.onliner.by/politika-konfidencialnosti']";
     public static final String LINK_FOOTER_SUPPORT = "//a[@href='https://blog.onliner.by/politika-konfidencialnosti']";
     public static final String LINK_FOOTER_REFUND_POLICY = "//a[@href='https://blog.onliner.by/politika-konfidencialnosti']";
-    public static final String BUTTON_LOGIN = "//div[@class='auth-bar__item auth-bar__item--text']";
-    public static final String BUTTON_CART = "//a[@class='auth-bar__item auth-bar__item--cart']";
+    public static final String BUTTON_LOGIN_CLASS_NAME = "auth-bar__item auth-bar__item--text";
+    public static final String BUTTON_CART_CLASS_NAME = "auth-bar__item auth-bar__item--cart";
     public static final String BUTTON_CATALOG_ELECTRONICS = "//span[@class='catalog-navigation-classifier__item-title-wrapper'][text()='Электроника']";
     public static final String BUTTON_CATALOG_COMPUTERS_AND_NETWORKS = "//span[@class='catalog-navigation-classifier__item-title-wrapper'][contains(text(),'Компьютеры')]";
 
-    public static final String BUTTON_SUBMIT_AUTHORIZATION_FORM = "//button[@class='auth-button auth-button_primary auth-button_middle auth-form__button auth-form__button_width_full']";
+    public static final String BUTTON_SUBMIT_AUTHORIZATION_FORM_CLASS_NAME = "auth-button auth-button_primary auth-button_middle auth-form__button auth-form__button_width_full";
 
-    public static final String LABEL_COPYRIGHT = "//div[@class='footer-style__copy']";
+    public static final String LABEL_COPYRIGHT_CLASS_NAME = "footer-style__copy";
     public static final String LINK_ABOUT_THE_COMPANY = "//a[@href='https://blog.onliner.by/about']";
     public static final String LABEL_CATALOG = "//div[@class='catalog-navigation__title']";
     public static final String LABEL_TV_AND_VIDEO = "//div[@class='catalog-navigation-list__aside-title'][contains(text(), 'Телевидение')]";
@@ -49,10 +49,10 @@ public class OnlinerPage {
     public static final String BUTTON_HOUSES_AND_APARTMENTS_RENT = "//span[@class='project-navigation__sign'][text()='Аренда']";
 
     public static final String LABEL_ORDERS = "//div[@class='service-header__title service-header__title_huge'][text()='Заказы']";
-    public static final String LABEL_FLEA_MARKET_TITLE = "//h1[@class='m-title-i']";
+    public static final String LABEL_FLEA_MARKET_TITLE_CLASS_NAME = "m-title-i";
     public static final String LABEL_FORUM_TITLE = "//h1[@class='m-title']";
-    public static final String LABEL_CART_TITLE = "//div[@class='cart-form__title cart-form__title_big-alter cart-form__title_condensed-additional']";
-    public static final String SEARCH_LINE = "//input [@class='fast-search__input']";
+    public static final String LABEL_CART_TITLE_CLASS_NAME = "cart-form__title cart-form__title_big-alter cart-form__title_condensed-additional";
+    public static final String SEARCH_LINE_CLASS_NAME = "fast-search__input";
     public static final String TEXT_FOR_SEARCH = "Samsung";
     public static final String SEARCH_FRAME = "//iframe[@class='modal-iframe']";
     public static final String RESULT_SEARCH_FIRST_PRODUCT = "//div[@class='product__title']";
@@ -92,7 +92,7 @@ public class OnlinerPage {
     public static final String TITLE_TV_IN_CART = "//div[@class='product-recommended__title']";
     public static final String LABEL_ARTICLE_TITLE = "//*[@id='container']//h1";
     public static final String LABEL_RENT_APARTMENT_ALL_PRICES = "//span[@data-bind=\"text: SearchApartments.formatPrice(apartment.price, 'BYN')\"]";
-    public static final String LABEL_RENT_APARTMENT_PRICE_EXACT = "//span[@class='apartment-bar__price apartment-bar__price_primary']";
+    public static final String LABEL_RENT_APARTMENT_PRICE_EXACT_CLASS_NAME = "apartment-bar__price apartment-bar__price_primary";
     public static final String LABEL_SERVICE_ITEM_TITLE = "//*[@id=\"container\"]/div/div[2]/div/div/div/div/div/div[1]/div/div/div/div[1]/div";
     public static final String SERVICES_PRICE_FIRST_ITEM ="//*[@id=\"service-list\"]/div[2]/div/div/div[3]/search-tasks-list/div/div/div[1]/search-tasks-item/div/div/div[1]/div/a/span[2]/span[1]";
     public static final String LIST_OF_FORUM_THEMES = "//ul[@class = 'b-list-topics']//li//h3";
