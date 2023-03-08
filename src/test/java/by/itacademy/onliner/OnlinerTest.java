@@ -261,11 +261,16 @@ public class OnlinerTest {
     @Test
     @DisplayName("ONLINER-UI-886")
     public void testChoosingInServices() {
+        Util.waitForPresenceElementByXPath(driver, OnlinerPage.LINK_SERVICES, 6000);
         driver.findElement(By.xpath(OnlinerPage.LINK_SERVICES)).click();
+        Util.waitForPresenceElementByXPath(driver, OnlinerPage.SERVICES_PRICE_FIRST_ITEM, 6000);
         WebElement servicesFirstItem = driver.findElement(By.xpath(OnlinerPage.SERVICES_PRICE_FIRST_ITEM));
         String firstServicesItem = servicesFirstItem.getText();
         servicesFirstItem.click();
+        Util.waitForPresenceElementByXPath(driver, OnlinerPage.LABEL_SERVICE_ITEM_TITLE, 6000);
         WebElement servicesFirstItemExact = driver.findElement(By.xpath(OnlinerPage.LABEL_SERVICE_ITEM_TITLE));
+        Util.waitForPresenceElementByXPath(driver, OnlinerPage.LABEL_SERVICE_ITEM_TITLE, 6000);
+        Util.waitFor(5);
         String firstServicesItemExact = servicesFirstItemExact.getText();
         Assertions.assertEquals(firstServicesItem, firstServicesItemExact);
     }
