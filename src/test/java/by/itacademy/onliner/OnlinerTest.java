@@ -40,13 +40,7 @@ public class OnlinerTest {
 
     @Test
     @DisplayName("ONLINER-UI-051")
-    public void openTV() {
-        driver.findElement(By.xpath((OnlinerPage.LINK_CATALOG))).click();
-        driver.findElement(By.xpath(OnlinerPage.BUTTON_CATALOG_ELECTRONICS)).click();
-        driver.findElement(By.xpath(OnlinerPage.LABEL_TV_AND_VIDEO)).click();
-        driver.findElement(By.xpath(OnlinerPage.CATALOG_NAVIGATION_LIST_ITEM_TV)).click();
-        Assertions.assertEquals("Телевизоры", driver.findElement(By.xpath(OnlinerPage.LABEL_TV_TITLE)).getText());
-    }
+    public void openTV() { Assertions.assertEquals("Телевизоры", onliner.openTVSection()); }
 
     @Test
     @DisplayName("ONLINER-UI-021")
