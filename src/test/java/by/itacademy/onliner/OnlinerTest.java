@@ -193,28 +193,20 @@ public class OnlinerTest {
     }
     @Test
     public void testSearchMobilePhone(){
-        // Открываем сайт и кликаем на "Барахолка"
         WebElement linkTextFleaMarket = driver.findElement(By.xpath(OnlinerPage.LINK_FLEA_MARKET));
         linkTextFleaMarket.click();
-        // кликаем на ссылку "Мобильные телефоны"
         WebElement linkTextMobilePhone  = driver.findElement(By.xpath(OnlinerPage.LINK_MOBILE_PHONE));
         linkTextMobilePhone.click();
          Util.waitFor(3);
-        // Кликаем на первой ссылке в выдаче объявлений
         List<WebElement> linkOfFirstAd = driver.findElements(By.xpath(OnlinerPage.LINK_FIRST_MOBILE_PHONE));
         String firstAdPhone = linkOfFirstAd.get(0).getText();
         driver.findElements(By.xpath(OnlinerPage.LINK_FIRST_MOBILE_PHONE)).get(0).click();
         Util.waitFor(5);
-       //  Util.waitForPresenceElementByXPath(driver,)
-        // Проверяем что название объявления соответствует тексту названия ссылки
         String nameFirst = driver.findElement(By.xpath(OnlinerPage.NAME_FIRST_MOBILE_PHONE)).getText();
         System.out.println(firstAdPhone);
         System.out.println(nameFirst);
         Assertions.assertEquals(firstAdPhone,nameFirst);
-
-
     }
-
     @AfterEach
     public void tearDown() {
         driver.quit();
