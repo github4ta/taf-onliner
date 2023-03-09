@@ -197,14 +197,12 @@ public class OnlinerTest {
         linkTextFleaMarket.click();
         WebElement linkTextMobilePhone  = driver.findElement(By.xpath(OnlinerPage.LINK_MOBILE_PHONE));
         linkTextMobilePhone.click();
-         Util.waitFor(3);
+        Util.waitFor(3);
         List<WebElement> linkOfFirstAd = driver.findElements(By.xpath(OnlinerPage.LINK_FIRST_MOBILE_PHONE));
         String firstAdPhone = linkOfFirstAd.get(0).getText();
         driver.findElements(By.xpath(OnlinerPage.LINK_FIRST_MOBILE_PHONE)).get(0).click();
         Util.waitFor(5);
         String nameFirst = driver.findElement(By.xpath(OnlinerPage.NAME_FIRST_MOBILE_PHONE)).getText();
-        System.out.println(firstAdPhone);
-        System.out.println(nameFirst);
         Assertions.assertEquals(firstAdPhone,nameFirst);
     }
     @AfterEach
