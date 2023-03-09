@@ -87,4 +87,5 @@ public class OnlinerPage {
     public static final String SERVICES_PRICE_FIRST_ITEM ="//*[@id=\"service-list\"]/div[2]/div/div/div[3]/search-tasks-list/div/div/div[1]/search-tasks-item/div/div/div[1]/div/a/span[2]/span[1]";
     public static final String LIST_OF_FORUM_THEMES = "//ul[@class = 'b-list-topics']//li//h3";
     public static final String LABEL_TITLE_FIRST_FORUM_THEME = "//div[@class = 'b-mnforum-header']//h1//a";
+    public static final String LABEL_TITLE_SALE_AND_RENT = "//span[@class='project-navigation__sign']";
 }
