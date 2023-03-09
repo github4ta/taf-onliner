@@ -93,7 +93,7 @@ public class OnlinerTest {
     public void testAbilitySearchByWord() {
         driver.findElement(By.className(OnlinerPage.SEARCH_LINE_CLASS_NAME)).sendKeys(OnlinerPage.TEXT_FOR_SEARCH);
         new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath(OnlinerPage.SEARCH_FRAME)));
+                .until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.className(OnlinerPage.SEARCH_FRAME_CLASS_NAME)));
         new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath(OnlinerPage.RESULT_SEARCH_FIRST_PRODUCT)));
         String resultSearch = driver.findElement(By.xpath(OnlinerPage.RESULT_SEARCH_FIRST_PRODUCT)).getText();

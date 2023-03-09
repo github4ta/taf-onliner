@@ -54,7 +54,7 @@ public class OnlinerPage {
     public static final String LABEL_CART_TITLE_CLASS_NAME = "cart-form__title_condensed-additional";
     public static final String SEARCH_LINE_CLASS_NAME = "fast-search__input";
     public static final String TEXT_FOR_SEARCH = "Samsung";
-    public static final String SEARCH_FRAME = "//iframe[@class='modal-iframe']";
+    public static final String SEARCH_FRAME_CLASS_NAME = "modal-iframe";
     public static final String RESULT_SEARCH_FIRST_PRODUCT = "//div[@class='product__title']";
     public static final String LABEL_TV_TITLE = "//h1[@class='schema-header__title js-schema-header_title'][contains(text(), 'Телевизоры')]";
     public static final String LABEL_ABOUT_COMPANY_TITLE = "//*[@id=\"container\"]/div/div[2]/div/div/div[3]/div[1]/div/div/div[1]/div/div[1]/div";
