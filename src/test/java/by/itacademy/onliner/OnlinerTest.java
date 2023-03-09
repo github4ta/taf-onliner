@@ -218,8 +218,9 @@ public class OnlinerTest {
         String priceOnGeneralPage = String.format("%s р.", driver.findElement(By
                 .xpath(OnlinerPage.LABEL_RENT_APARTMENT_ALL_PRICES)).getText());
         driver.findElement(By.xpath(OnlinerPage.LABEL_RENT_APARTMENT_ALL_PRICES)).click();
-        Util.waitForPresenceElementByXPath(driver, OnlinerPage.LABEL_RENT_APARTMENT_PRICE_EXACT_CLASS_NAME, 10);
-        String priceOnPrivatePage = driver.findElement(By.className(OnlinerPage.LABEL_RENT_APARTMENT_PRICE_EXACT_CLASS_NAME)).getText();
+        String priceOnPrivatePage = new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions
+                        .presenceOfElementLocated(By.className(OnlinerPage.LABEL_RENT_APARTMENT_PRICE_EXACT_CLASS_NAME)))
+                .getText();
         Assertions.assertEquals(priceOnGeneralPage, priceOnPrivatePage);
     }
 
