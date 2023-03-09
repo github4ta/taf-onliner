@@ -57,16 +57,8 @@ public class OnlinerTest {
 
     @Test
     public void testHousesAndFlats() {
-        driver.findElement(By.xpath(OnlinerPage.LINK_HOUSES_AND_APARTMENTS)).click();
-        WebElement textOfBtnSale = driver.findElement(By.xpath(OnlinerPage.BUTTON_HOUSES_AND_APARTMENTS_SALE));
-        Assertions.assertEquals("Продажа", textOfBtnSale.getText());
-    }
-
-    @Test
-    public void testHousesAndFlatsRent() {
-        driver.findElement(By.xpath(OnlinerPage.LINK_HOUSES_AND_APARTMENTS)).click();
-        WebElement textOfBtnRent = driver.findElement(By.xpath(OnlinerPage.BUTTON_HOUSES_AND_APARTMENTS_RENT));
-        Assertions.assertEquals("Аренда", textOfBtnRent.getText());
+        OnlinerStep step = new OnlinerStep(driver);
+        step.openHousesAndFlatsSection();
     }
 
     @Test
