@@ -11,6 +11,10 @@ public class OnlinerPage {
     public static final String LINK_SERVICES = "//span[@class='b-main-navigation__text'][contains(text(),'Услуги')]";
     public static final String LINK_FLEA_MARKET = "//span[@class='b-main-navigation__text'][contains(text(),'Барахолка')]";
     public static final String LINK_FORUM = "//span[@class='b-main-navigation__text'][contains(text(),'Форум')]";
+    public static final String LINK_MOBILE_PHONE = " //*[@id='minWidth']/div/div[2]/div[2]/div/div[5]/div[1]/div[1]/ul/li[1]/a";
+    public static final String LINK_FIRST_MOBILE_PHONE = "//td[@class='txt']//h2//a[contains(@href ,'./viewtopic.php?t=')]";
+    public static final String NAME_FIRST_MOBILE_PHONE = "//*[@id='minWidth']/div/div[2]/div[2]/div/div[2]/div[2]/h1/a";
+    public static final String BUTTON_ENTRANCE = "//div[@class='auth-bar__item auth-bar__item--text']";
     public static final String LINK_FOOTER_USER_AGREEMENT = "//a[@href='https://blog.onliner.by/siterules']";
     public static final String LINK_FOOTER_ABOUT_COMPANY = "//a[@href='https://blog.onliner.by/about']";
     public static final String LINK_FOOTER_KONTAKTS_EDITORIAL = "//a[@href='https://people.onliner.by/contacts']";
