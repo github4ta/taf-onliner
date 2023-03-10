@@ -218,6 +218,21 @@ public class OnlinerTest {
     }
 
     @Test
+    public void testSearchMobilePhone(){
+        WebElement linkTextFleaMarket = driver.findElement(By.xpath(OnlinerPage.LINK_FLEA_MARKET));
+        linkTextFleaMarket.click();
+        WebElement linkTextMobilePhone  = driver.findElement(By.xpath(OnlinerPage.LINK_MOBILE_PHONE));
+        linkTextMobilePhone.click();
+        Util.waitFor(3);
+        List<WebElement> linkOfFirstAd = driver.findElements(By.xpath(OnlinerPage.LINK_FIRST_MOBILE_PHONE));
+        String firstAdPhone = linkOfFirstAd.get(0).getText();
+        driver.findElements(By.xpath(OnlinerPage.LINK_FIRST_MOBILE_PHONE)).get(0).click();
+        Util.waitFor(5);
+        String nameFirst = driver.findElement(By.xpath(OnlinerPage.NAME_FIRST_MOBILE_PHONE)).getText();
+        Assertions.assertEquals(firstAdPhone,nameFirst);
+    }
+
+    @Test
     @DisplayName("ONLINER-UI-881")
     public void testTVinCart() {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
