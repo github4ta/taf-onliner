@@ -13,14 +13,14 @@ public class OnlinerStep {
     }
 
     public String openCart(){
-        driver.findElement(By.xpath(OnlinerPage.BUTTON_CART)).click();
-        WebElement TITLE_CART_Element = driver.findElement(By.xpath(OnlinerPage.LABEL_CART_TITLE));
+        driver.findElement(By.className(OnlinerPage.BUTTON_CART_CLASS_NAME)).click();
+        WebElement TITLE_CART_Element = driver.findElement(By.className(OnlinerPage.LABEL_CART_TITLE_CLASS_NAME));
         return TITLE_CART_Element.getText();
     }
 
     public String openFleaMarketSection(){
         driver.findElement(By.xpath(OnlinerPage.LINK_FLEA_MARKET)).click();
-        WebElement titleFleaMarket = driver.findElement(By.xpath(OnlinerPage.LABEL_FLEA_MARKET_TITLE));
+        WebElement titleFleaMarket = driver.findElement(By.className(OnlinerPage.LABEL_FLEA_MARKET_TITLE_CLASS_NAME));
         return titleFleaMarket.getText();
         }
 

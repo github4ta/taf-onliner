@@ -27,7 +27,7 @@ public class OnlinerTest {
     @Test
     @DisplayName("ONLINER-UI-006")
     public void testOnlinerOpen() {
-        String actualFooterCoopyright = driver.findElement(By.xpath(OnlinerPage.LABEL_COPYRIGHT)).getText();
+        String actualFooterCoopyright = driver.findElement(By.className(OnlinerPage.LABEL_COPYRIGHT_CLASS_NAME)).getText();
         Util.waitFor(1);
         Assertions.assertEquals("© 2001—2023 Onlíner", actualFooterCoopyright);
     }
@@ -85,9 +85,9 @@ public class OnlinerTest {
     @Test
     @DisplayName("ONLINER-UI-091")
     public void testAbilitySearchByWord() {
-        driver.findElement(By.xpath(OnlinerPage.SEARCH_LINE)).sendKeys(OnlinerPage.TEXT_FOR_SEARCH);
+        driver.findElement(By.className(OnlinerPage.SEARCH_LINE_CLASS_NAME)).sendKeys(OnlinerPage.TEXT_FOR_SEARCH);
         new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath(OnlinerPage.SEARCH_FRAME)));
+                .until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.className(OnlinerPage.SEARCH_FRAME_CLASS_NAME)));
         new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath(OnlinerPage.RESULT_SEARCH_FIRST_PRODUCT)));
         String resultSearch = driver.findElement(By.xpath(OnlinerPage.RESULT_SEARCH_FIRST_PRODUCT)).getText();
@@ -98,7 +98,7 @@ public class OnlinerTest {
     @DisplayName("ONLINER-UI-081")
     public void testOpenOnliner() {
         Util.waitFor(3);
-        By btnLoginBy = By.xpath(OnlinerPage.BUTTON_LOGIN);
+        By btnLoginBy = By.className(OnlinerPage.BUTTON_LOGIN_CLASS_NAME);
         WebElement btnLoginElement = driver.findElement(btnLoginBy);
         btnLoginElement.click();
         Driver.waitForPresenceElementByXPath(driver, OnlinerPage.BUTTON_ENTER_TITLE, 3000);
@@ -115,8 +115,8 @@ public class OnlinerTest {
     @Test
     @DisplayName("ONLINER-UI-007")
     public void testWithEmptyFields() {
-        driver.findElement(By.xpath(OnlinerPage.BUTTON_LOGIN)).click();
-        driver.findElement(By.xpath(OnlinerPage.BUTTON_SUBMIT_AUTHORIZATION_FORM)).click();
+        driver.findElement(By.className(OnlinerPage.BUTTON_LOGIN_CLASS_NAME)).click();
+        driver.findElement(By.className(OnlinerPage.BUTTON_SUBMIT_AUTHORIZATION_FORM_CLASS_NAME)).click();
         new WebDriverWait(driver, Duration.ofSeconds(1))
                 .until(ExpectedConditions
                         .visibilityOfElementLocated(By.xpath(OnlinerPage.LABEL_ERR_NO_PASSWORD)));
@@ -127,10 +127,10 @@ public class OnlinerTest {
     @Test
     @DisplayName("ONLINER-UI-011")
     public void testLoginFormWithEmptyPassword() {
-        driver.findElement(By.xpath(OnlinerPage.BUTTON_LOGIN)).click();
+        driver.findElement(By.className(OnlinerPage.BUTTON_LOGIN_CLASS_NAME)).click();
         WebElement inputLogin = driver.findElement(By.xpath(OnlinerPage.INPUT_LOGIN));
         inputLogin.sendKeys("Nataliya0405");
-        driver.findElement(By.xpath(OnlinerPage.BUTTON_SUBMIT_AUTHORIZATION_FORM)).click();
+        driver.findElement(By.className(OnlinerPage.BUTTON_SUBMIT_AUTHORIZATION_FORM_CLASS_NAME)).click();
         Util.waitFor(40);
         Assertions.assertEquals("Укажите пароль", driver.findElement(By.xpath(OnlinerPage.INPUT_PASSWORD)).getText());
     }
@@ -212,8 +212,9 @@ public class OnlinerTest {
         String priceOnGeneralPage = String.format("%s р.", driver.findElement(By
                 .xpath(OnlinerPage.LABEL_RENT_APARTMENT_ALL_PRICES)).getText());
         driver.findElement(By.xpath(OnlinerPage.LABEL_RENT_APARTMENT_ALL_PRICES)).click();
-        Driver.waitForPresenceElementByXPath(driver, OnlinerPage.LABEL_RENT_APARTMENT_PRICE_EXACT, 10);
-        String priceOnPrivatePage = driver.findElement(By.xpath(OnlinerPage.LABEL_RENT_APARTMENT_PRICE_EXACT)).getText();
+        String priceOnPrivatePage = new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions
+                .presenceOfElementLocated(By.className(OnlinerPage.LABEL_RENT_APARTMENT_PRICE_EXACT_CLASS_NAME)))
+                .getText();
         Assertions.assertEquals(priceOnGeneralPage, priceOnPrivatePage);
     }
 
